@@ -4,11 +4,6 @@
   </div>
 </template>
 
-<style lang="css">
-@import "assets/css/main.css";
-/*@import "assets/css/plugins.css";*/
-</style>
-
 <script>
   export default {
     name: 'Layout',

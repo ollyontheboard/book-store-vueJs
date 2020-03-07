@@ -70,8 +70,8 @@
                                 <div class="main-navigation flex-lg-right">
                                     <div class="cart-widget">
                                         <div class="login-block">
-                                            <a href="login-register.html" class="font-weight-bold">Login</a> <br>
-                                            <span>or</span><a href="login-register.html">Register</a>
+                                            <router-link to="/auth/login" class="font-weight-bold">Login</router-link><br>
+                                            <span>or</span><router-link to="/auth/login" >Register</router-link>
                                         </div>
                                         <div class="cart-block">
                                             <div class="cart-total">
@@ -245,16 +245,8 @@
                             <div class="col-lg-6">
                                 <div class="main-navigation flex-lg-right">
                                     <ul class="main-menu menu-right li-last-0">
-                                        <li class="menu-item has-children">
-                                            <a href="javascript:void(0)">Home <i
-                                                    class="fas fa-chevron-down dropdown-arrow"></i></a>
-                                            <ul class="sub-menu">
-                                                <li> <a href="index.html">Home One</a></li>
-                                                <li> <a href="index-2.html">Home Two</a></li>
-                                                <li> <a href="index-3.html">Home Three</a></li>
-                                                <li> <a href="index-4.html">Home Four</a></li>
-                                                <li> <a href="index-5.html">Home Five</a></li>
-                                            </ul>
+                                        <li class="menu-item">
+                                            <router-link to="/" >Home</router-link><i></i>
                                         </li>
                                         <!-- Shop -->
                                         <li class="menu-item has-children mega-menu">
@@ -521,15 +513,8 @@
                             <!-- mobile menu navigation start -->
                             <nav class="off-canvas-nav">
                                 <ul class="mobile-menu main-mobile-menu">
-                                    <li class="menu-item-has-children">
+                                    <li class="menu-item">
                                         <a href="#">Home</a>
-                                        <ul class="sub-menu">
-                                            <li> <a href="index.html">Home One</a></li>
-                                            <li> <a href="index-2.html">Home Two</a></li>
-                                            <li> <a href="index-3.html">Home Three</a></li>
-                                            <li> <a href="index-4.html">Home Four</a></li>
-                                            <li> <a href="index-5.html">Home Five</a></li>
-                                        </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Blog</a>
@@ -681,16 +666,8 @@
                         <div class="col-lg-8">
                             <div class="main-navigation flex-lg-right">
                                 <ul class="main-menu menu-right ">
-                                    <li class="menu-item has-children">
-                                        <a href="javascript:void(0)">Home <i
-                                                class="fas fa-chevron-down dropdown-arrow"></i></a>
-                                        <ul class="sub-menu">
-                                            <li> <a href="index.html">Home One</a></li>
-                                            <li> <a href="index-2.html">Home Two</a></li>
-                                            <li> <a href="index-3.html">Home Three</a></li>
-                                            <li> <a href="index-4.html">Home Four</a></li>
-                                            <li> <a href="index-5.html">Home Five</a></li>
-                                        </ul>
+                                    <li class="menu-item">
+                                        <a href="javascript:void(0)">Home <i></i></a>
                                     </li>
                                     <!-- Shop -->
                                     <li class="menu-item has-children mega-menu">

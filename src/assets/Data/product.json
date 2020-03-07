@@ -1,0 +1,22 @@
+{
+  "product_gallery": [
+    {
+      "id": 1,
+      "data_bg": "image/bg-images/home-3-slider-1.jpg",
+      "bg_h1": "Beautifully Designed",
+      "bg_h2": "Cover up front of book and <br>leave summary",
+      "bg_link": "#",
+      "justify": true,
+      "bg_link_title": "Shop Now"
+    },
+    {
+      "id": 2,
+      "data_bg": "image/bg-images/home-3-slider-2.jpg",
+      "bg_h1": "I Love This Idea!",
+      "bg_h2": "Cover up front of book and <br>leave summary",
+      "bg_link": "#",
+      "justify": false,
+      "bg_link_title": "Start Shopping"
+    }
+  ]
+}

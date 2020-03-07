@@ -10,7 +10,10 @@ window.jQuery = $;
 
 Vue.use(VueOffline);
 
-Vue.config.productionTip = false;
+import "@/assets/css/plugins.css"
+import "@/assets/css/main.css"
+
+Vue.config.productionTip = true;
 
 new Vue({
   router,

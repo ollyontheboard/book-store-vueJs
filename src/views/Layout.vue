@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script>
+<script lang="js">
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 const topHeader = () => import('@/components/top-header.vue');
@@ -47,6 +47,23 @@ export default {
       twoColumnSection,
       clientTestimonial,
       brandSlider
-  }
+  },
+    mounted() {
+        setTimeout(function() {
+            // Get the head tag
+            var head_ID = document.getElementsByTagName("head")[0];
+            // Create script element
+            var script_element = document.createElement('script');
+            // Set the script type to JavaScript
+            script_element.type = 'text/javascript';
+            // External JS file
+            script_element.src = 'js/custom.js';
+            head_ID.appendChild(script_element);
+        }, 300);
+    }
 }
 </script>
+<!--<style lang="css">-->
+<!--    @import "../assets/css/main.css";-->
+<!--    /*@import "assets/css/plugins.css";*/-->
+<!--</style>-->

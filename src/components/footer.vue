@@ -1,5 +1,5 @@
 <template>
-    <div class="footer-section">
+    <div class="page-footer">
         <footer class="site-footer">
             <div class="container">
                 <div class="row justify-content-between  section-padding">
@@ -86,7 +86,7 @@
 
 <script>
     export default {
-        name: "footer"
+        name: "page-footer"
     }
 </script>
 

@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/plugins.css" />
-<!--    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />-->
     <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
   </head>
   <body>
@@ -16,19 +14,6 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <script src="js/ajax-mail.js"></script>
+<!--  <script src="js/ajax-mail.js"></script>-->
   <script src="js/plugins.js"></script>
-  <script type="application/javascript">
-    setTimeout(function() {
-      // Get the head tag
-      var head_ID = document.getElementsByTagName("head")[0];
-      // Create script element
-      var script_element = document.createElement('script');
-      // Set the script type to JavaScript
-      script_element.type = 'text/javascript';
-      // External JS file
-      script_element.src = 'js/custom.js';
-      head_ID.appendChild(script_element);
-    }, 200);
-  </script>
 </html>
