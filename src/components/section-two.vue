@@ -30,7 +30,7 @@
                                     <img :src='url+item.image' alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="../assets/image/products/product-1.jpg" alt="">
+                                            <img :src='url+item.image' alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
