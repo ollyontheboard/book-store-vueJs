@@ -58,7 +58,7 @@ export default {
             // External JS file
             script_element.src = 'js/custom.js';
             head_ID.appendChild(script_element);
-        }, 200);
+        }, 300);
     }
 }
 </script>
