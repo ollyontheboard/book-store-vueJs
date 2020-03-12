@@ -31,6 +31,7 @@ export default {
             .catch(error => Promise.reject(error.response));
     },
 
+
     getProducts(data) {
         return axios
             .post(process.env.VUE_APP_APIURL + "api/v1/products", data)
