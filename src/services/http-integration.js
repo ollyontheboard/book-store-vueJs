@@ -13,20 +13,27 @@ axios.interceptors.request.use(
 export default {
     authenticate(data) {
         return axios
-            .post(process.env.VUE_APP_APIURL + "login", data)
+            .post(process.env.VUE_APP_APIURL + "api/v1/login", data)
             .then(response => response.data)
             .catch(error => Promise.reject(error.response));
     },
     store_userData(data) {
         return axios
-            .post(process.env.VUE_APP_APIURL + "register", data)
+            .post(process.env.VUE_APP_APIURL + "api/v1/register", data)
             .then(response => response.data)
             .catch(error => Promise.reject(error.response));
     },
 
     getMe(data) {
         return axios
-            .post(process.env.VUE_APP_APIURL + "getUser", data)
+            .post(process.env.VUE_APP_APIURL + "api/v1/getUser", data)
+            .then(response => response.data)
+            .catch(error => Promise.reject(error.response));
+    },
+
+    getProducts(data) {
+        return axios
+            .post(process.env.VUE_APP_APIURL + "api/v1/products", data)
             .then(response => response.data)
             .catch(error => Promise.reject(error.response));
     },
