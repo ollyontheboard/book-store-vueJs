@@ -19,7 +19,7 @@
                     <div class="single-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-image">
-                                <img src="image/others/client-1.png" alt="">
+                                <img src="../assets/image/others/client-1.png" alt="">
                             </div>
                             <div class="testimonial-body">
                                 <article>
@@ -35,7 +35,7 @@
                     <div class="single-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-image">
-                                <img src="image/others/client-2.png" alt="">
+                                <img src="../assets/image/others/client-2.png" alt="">
                             </div>
                             <div class="testimonial-body">
                                 <article>
@@ -51,7 +51,7 @@
                     <div class="single-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-image">
-                                <img src="image/others/client-3.png" alt="">
+                                <img src="../assets/image/others/client-3.png" alt="">
                             </div>
                             <div class="testimonial-body">
                                 <article>
@@ -67,7 +67,7 @@
                     <div class="single-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-image">
-                                <img src="image/others/client-4.png" alt="">
+                                <img src="../assets/image/others/client-4.png" alt="">
                             </div>
                             <div class="testimonial-body">
                                 <article>
@@ -83,7 +83,7 @@
                     <div class="single-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-image">
-                                <img src="image/others/client-5.png" alt="">
+                                <img src="../assets/image/others/client-5.png" alt="">
                             </div>
                             <div class="testimonial-body">
                                 <article>
@@ -120,19 +120,19 @@
               "asNavFor": ".product-slider-nav"
               }'>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-1.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-1.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-2.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-2.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-3.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-3.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-4.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-4.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-5.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-5.jpg" alt="">
                                     </div>
                                 </div>
                                 <!-- Product Details Slider Nav -->
@@ -149,19 +149,19 @@
               "focusOnSelect": true
               }'>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-1.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-1.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-2.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-2.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-3.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-3.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-4.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-4.jpg" alt="">
                                     </div>
                                     <div class="single-slide">
-                                        <img src="image/products/product-details-5.jpg" alt="">
+                                        <img src="../assets/image/products/product-details-5.jpg" alt="">
                                     </div>
                                 </div>
                             </div>

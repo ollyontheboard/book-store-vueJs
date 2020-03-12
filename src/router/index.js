@@ -11,8 +11,8 @@ const routes = [
   },
   {
     path: '/auth/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Auth/login')
+    name: 'auth',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Auth/auth')
   },
 ];
 

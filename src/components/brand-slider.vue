@@ -15,28 +15,28 @@
                 {"breakpoint":320, "settings": {"slidesToShow": 1} }
             ]'>
                     <div class="single-slide">
-                        <img src="image/others/brand-1.jpg" alt="">
+                        <img src="../assets/image/others/brand-1.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-2.jpg" alt="">
+                        <img src="../assets/image/others/brand-2.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-3.jpg" alt="">
+                        <img src="../assets/image/others/brand-3.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-4.jpg" alt="">
+                        <img src="../assets/image/others/brand-4.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-5.jpg" alt="">
+                        <img src="../assets/image/others/brand-5.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-6.jpg" alt="">
+                        <img src="../assets/image/others/brand-6.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-1.jpg" alt="">
+                        <img src="../assets/image/others/brand-1.jpg" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/others/brand-2.jpg" alt="">
+                        <img src="../assets/image/others/brand-2.jpg" alt="">
                     </div>
                 </div>
             </div>

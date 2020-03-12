@@ -27,10 +27,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-2.jpg" alt="">
+                                    <img src="../assets/image/products/product-2.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-1.jpg" alt="">
+                                            <img src="../assets/image/products/product-1.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
@@ -68,10 +68,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-10.jpg" alt="">
+                                    <img src="../assets/image/products/product-10.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-1.jpg" alt="">
+                                            <img src="../assets/image/products/product-1.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
@@ -108,10 +108,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-3.jpg" alt="">
+                                    <img src="../assets/image/products/product-3.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-2.jpg" alt="">
+                                            <img src="../assets/image/products/product-2.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
@@ -149,10 +149,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-5.jpg" alt="">
+                                    <img src="../assets/image/products/product-5.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-4.jpg" alt="">
+                                            <img src="../assets/image/products/product-4.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
@@ -189,10 +189,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-6.jpg" alt="">
+                                    <img src="../assets/image/products/product-6.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-4.jpg" alt="">
+                                            <img src="../assets/image/products/product-4.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
@@ -230,10 +230,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-8.jpg" alt="">
+                                    <img src="../assets/image/products/product-8.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-7.jpg" alt="">
+                                            <img src="../assets/image/products/product-7.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
@@ -270,10 +270,10 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img src="image/products/product-13.jpg" alt="">
+                                    <img src="../assets/image/products/product-13.jpg" alt="">
                                     <div class="hover-contents">
                                         <a href="product-details.html" class="hover-image">
-                                            <img src="image/products/product-11.jpg" alt="">
+                                            <img src="../assets/image/products/product-11.jpg" alt="">
                                         </a>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">

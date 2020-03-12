@@ -2,7 +2,7 @@
   "product_gallery": [
     {
       "id": 1,
-      "data_bg": "image/bg-images/home-3-slider-1.jpg",
+      "data_bg": "../assets/image/bg-images/home-3-slider-1.jpg",
       "bg_h1": "Beautifully Designed",
       "bg_h2": "Cover up front of book and <br>leave summary",
       "bg_link": "#",

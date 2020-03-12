@@ -6,12 +6,12 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <a href="#" class="promo-image promo-overlay">
-                            <img src="image/bg-images/promo-banner-with-text.jpg" alt="">
+                            <img src="../assets/image/bg-images/promo-banner-with-text.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a href="#" class="promo-image promo-overlay">
-                            <img src="image/bg-images/promo-banner-with-text-2.jpg" alt="">
+                            <img src="../assets/image/bg-images/promo-banner-with-text-2.jpg" alt="">
                         </a>
                     </div>
                 </div>
