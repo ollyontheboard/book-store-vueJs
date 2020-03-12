@@ -59,6 +59,14 @@ export default {
             // External JS file
             script_element.src = 'js/custom.js';
             head_ID.appendChild(script_element);
+
+
+            // Create script element
+            // Set the script type to JavaScript
+            script_element.type = 'text/javascript';
+            // External JS file
+            script_element.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws';
+            head_ID.appendChild(script_element);
         }, 300);
     }
 }
