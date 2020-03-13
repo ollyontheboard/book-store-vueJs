@@ -3,7 +3,7 @@
 import { register } from 'register-service-worker'
 
 // if (process.env.NODE_ENV === 'production') {
-if (process.env.NODE_ENV) {
+// if (process.env.NODE_ENV) {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
       console.log(
@@ -38,5 +38,5 @@ if (process.env.NODE_ENV) {
         position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
       });
     }
-  })
-}
+  });
+// }
