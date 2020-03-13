@@ -12,7 +12,7 @@
     methods:{
       ...mapActions(['getallProducts']),
     },
-    mounted() {
+    beforeMount() {
       this.getallProducts();
     }
   }
