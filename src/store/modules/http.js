@@ -7,7 +7,8 @@ export default {
     tokens: {
       access: null,
     },
-    products: false
+    products: false,
+    product_details:false
   },
   mutations: {
     setUser(state, user) {
@@ -33,6 +34,10 @@ export default {
     setAllProducts(state, data) {
       state.products = data;
       localStorage.setItem("products_cat1", JSON.stringify(data));
+    },
+    setProducts(state, data) {
+      state.product_details = data;
+      localStorage.setItem("product", JSON.stringify(data));
     }
   },
   actions: {
@@ -78,12 +83,22 @@ export default {
         throw new Error(error.response.data.error);
       }
     },
+    async getallProduct({ commit }, data) {
+      try {
+        let response = await intergration_layer.getProduct(data);
+        commit("setProducts", response.data.product);
+        return response
+      }catch (error) {
+        throw new Error(error.response.data.error);
+      }
+    },
   },
   getters: {
     user: state => localStorage.getItem("authMetadata") !== null ? JSON.parse(localStorage.getItem("authMetadata")) : state.user,
     loggedin: state => state.loggedin,
     accesstoken: state => state.tokens.access,
     allProducts: state => state.products,
+    product: state => state.product_details,
     auth: state => state,
   }
 };

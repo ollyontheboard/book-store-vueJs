@@ -24,6 +24,11 @@ const routes = [
     name: 'auth',
     component: () => import(/* webpackChunkName: "about" */ '../views/Auth/auth')
   },
+  {
+    path: '/product-details/:id',
+    name: 'product_details',
+    component: () => import(/* webpackChunkName: "about" */ '../views/product_details')
+  }
 ];
 
 const router = new VueRouter({

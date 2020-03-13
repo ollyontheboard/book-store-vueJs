@@ -20,18 +20,16 @@
                     <div class="single-slide" v-for="item in products" :key="item.id">
                         <div class="product-card">
                             <div class="product-header">
-                                <a href="#" class="author">
-                                    General
-                                </a>
-                                <h3><a href="product-details.hRevolutionizetml">{{item.name}}</a></h3>
+                                General
+                                <h3><router-link :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">{{item.name}}</router-link></h3>
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
                                     <img :src='url+item.image' alt="">
                                     <div class="hover-contents">
-                                        <a href="product-details.html" class="hover-image">
+                                        <router-link :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }" class="hover-image">
                                             <img :src='url+item.image' alt="">
-                                        </a>
+                                        </router-link>
                                         <div class="hover-btns">
                                             <a href="cart.html" class="single-btn">
                                                 <i class="fas fa-shopping-basket"></i>

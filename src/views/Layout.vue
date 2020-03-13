@@ -22,6 +22,8 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
+import {mapActions} from "vuex";
+
 const topHeader = () => import('@/components/top-header.vue');
 const homeGallery = () => import('@/components/home-category-gallery.vue');
 const pageFooter = () => import('@/components/footer.vue');
@@ -47,7 +49,11 @@ export default {
       clientTestimonial,
       brandSlider
   },
-    mounted() {
+    methods:{
+        ...mapActions(['getallProducts']),
+    },
+    created() {
+      this.getallProducts();
         setTimeout(function() {
             // Get the head tag
             var head_ID = document.getElementsByTagName("head")[0];
