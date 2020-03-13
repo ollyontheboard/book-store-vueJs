@@ -32,6 +32,7 @@ export default {
 
     setAllProducts(state, data) {
       state.products = data;
+      localStorage.setItem("products_cat1", JSON.stringify(data));
     }
   },
   actions: {

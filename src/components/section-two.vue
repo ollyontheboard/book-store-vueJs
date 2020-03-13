@@ -65,19 +65,20 @@
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    // import {mapGetters} from "vuex";
 
     export default {
         name: "section-two",
         data: function () {
             return {
-                url: process.env.VUE_APP_APIURL+'uploads/'
+                url: process.env.VUE_APP_APIURL+'uploads/',
+                products: JSON.parse(localStorage.getItem("products_cat1"))
             };
         },
         computed: {
-            ...mapGetters({
-                products: "allProducts"
-            })
+            // ...mapGetters({
+            //     products: "allProducts"
+            // })
         }
     }
 </script>
