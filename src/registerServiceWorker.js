@@ -3,7 +3,7 @@
 import { register } from 'register-service-worker'
 
 // if (process.env.NODE_ENV === 'production') {
-// if (process.env.NODE_ENV) {
+if (process.env.NODE_ENV) {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready () {
       console.log(
@@ -21,22 +21,13 @@ import { register } from 'register-service-worker'
       console.log('New content is downloading.')
     },
     updated () {
-      console.log('pwa has been updated')
+      console.log('New content is available; please refresh.')
     },
     offline () {
-      this.$iziToast.info({
-        title: 'Hey',
-        message: 'No internet connection found. App is running in offline mode.',
-        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-      });
+      console.log('No internet connection found. App is running in offline mode.')
     },
     error (error) {
       console.error('Error during service worker registration:', error)
-      this.$iziToast.error({
-        title: 'Hey',
-        message: 'Error during service worker registration:',
-        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-      });
     }
-  });
-// }
+  })
+}

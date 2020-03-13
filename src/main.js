@@ -18,7 +18,7 @@ Vue.prototype.$iziToast = iziToast;
 import "@/assets/css/plugins.css"
 import "@/assets/css/main.css"
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 
 new Vue({
   router,
