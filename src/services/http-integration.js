@@ -34,7 +34,7 @@ export default {
 
     getProducts(data) {
         return axios
-            .post(process.env.VUE_APP_APIURL + "api/v1/products", data)
+            .get(process.env.VUE_APP_APIURL + "api/v1/products", data)
             .then(response => response.data)
             .catch(error => Promise.reject(error.response));
     },
