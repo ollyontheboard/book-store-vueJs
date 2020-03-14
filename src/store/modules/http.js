@@ -97,9 +97,13 @@ export default {
     },
     async getallProduct({ commit }, data) {
       try {
-        let response = await intergration_layer.getProduct(data);
-        commit("setProducts", response.data.product);
-        return response
+        if (navigator.onLine) {
+          let response = await intergration_layer.getProduct(data);
+          commit("setProducts", response.data.product);
+          return response
+        }else {
+          commit("setAllProducts", '');
+        }
       }catch (error) {
         throw new Error(error.response.data.error);
       }
