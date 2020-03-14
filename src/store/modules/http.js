@@ -11,33 +11,41 @@ export default {
     product_details:false
   },
   mutations: {
-    setUser(state, user) {
+    "setUser"(state, user) {
       localStorage.setItem("authMetadata", JSON.stringify(user));
       state.user = user;
     },
     // eslint-disable-next-line no-unused-vars
-    clearUser(state, user) {
+    "clearUser"(state, user) {
       state.user = false;
     },
-    setAccessToken(state, token) {
+    "setAccessToken"(state, token) {
       localStorage.setItem("accessToken", token);
       state.tokens.access = token;
     },
-    clearAccessToken(state) {
+    "clearAccessToken"(state) {
       localStorage.removeItem("accessToken");
       state.tokens.access = false;
     },
-    setLoggedIn(state, status) {
+    "setLoggedIn"(state, status) {
       state.loggedin = status;
     },
 
-    setAllProducts(state, data) {
-      state.products = data;
-      localStorage.setItem("products_cat1", JSON.stringify(data));
+    "setAllProducts"(state, data) {
+      if (navigator.onLine) {
+        state.products = data;
+        localStorage.setItem('products_cat1', JSON.stringify(data))
+      }else {
+        state.products = localStorage.getItem('products_cat1')
+      }
     },
-    setProducts(state, data) {
-      state.product_details = data;
-      localStorage.setItem("product", JSON.stringify(data));
+    "setProducts"(state, data) {
+      if (navigator.onLine) {
+        state.product_details = data;
+        localStorage.setItem("product", JSON.stringify(data));
+      }else {
+        state.product_details = localStorage.getItem('product')
+      }
     }
   },
   actions: {

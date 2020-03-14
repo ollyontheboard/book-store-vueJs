@@ -17,17 +17,24 @@
                         {"breakpoint":480, "settings": {"slidesToShow": 1} },
                         {"breakpoint":320, "settings": {"slidesToShow": 1} }
                     ]'>
-                    <div class="single-slide" v-for="item in products" :key="item.id">
+                    <div class="single-slide" v-for="item in productsGetter" :key="item.id">
                         <div class="product-card">
                             <div class="product-header">
                                 General
-                                <h3><router-link :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">{{item.name}}</router-link></h3>
+                                <h3>
+                                    <router-link
+                                            :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
+                                        {{item.name}}
+                                    </router-link>
+                                </h3>
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
                                     <img :src='url+item.image' alt="">
                                     <div class="hover-contents">
-                                        <router-link :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }" class="hover-image">
+                                        <router-link
+                                                :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }"
+                                                class="hover-image">
                                             <img :src='url+item.image' alt="">
                                         </router-link>
                                         <div class="hover-btns">
@@ -63,20 +70,20 @@
 </template>
 
 <script>
-    // import {mapGetters} from "vuex";
+    import {mapGetters} from "vuex";
 
     export default {
         name: "section-two",
         data: function () {
             return {
-                url: process.env.VUE_APP_APIURL+'uploads/',
-                products: JSON.parse(localStorage.getItem("products_cat1"))
+                url: process.env.VUE_APP_APIURL + 'uploads/',
+                // products: JSON.parse(localStorage.getItem("products_cat1"))
             };
         },
         computed: {
-            // ...mapGetters({
-            //     products: "allProducts"
-            // })
+            ...mapGetters({
+                productsGetter: "allProducts"
+            })
         }
     }
 </script>

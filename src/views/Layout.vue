@@ -15,6 +15,8 @@
 
 
     <page-footer></page-footer>
+<!--      <p v-if="isOnline">This part will be visible only if user is online</p>-->
+<!--      <p v-if="isOffline">This part will be visible only if user is offline</p>-->
   </div>
 </template>
 
@@ -51,6 +53,11 @@ export default {
   },
     methods:{
         ...mapActions(['getallProducts']),
+    },
+    computed: {
+        networkStatus () {
+            return this.isOnline ? 'My network is fine' : 'I am offline'
+        }
     },
     created() {
       this.getallProducts();
