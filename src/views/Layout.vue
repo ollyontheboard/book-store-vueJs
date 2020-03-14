@@ -4,6 +4,7 @@
         <home-gallery></home-gallery>
             <home-category></home-category>
             <second-category></second-category>
+              <br>
             <third-section></third-section>
 
             <feature-section></feature-section>
