@@ -108,6 +108,9 @@ export default {
         throw new Error(error.response.data.error);
       }
     },
+    ManualData({commit}, DemoJson) {
+      commit('setAllProducts', DemoJson.data.products);
+    },
   },
   getters: {
     user: state => localStorage.getItem("authMetadata") !== null ? JSON.parse(localStorage.getItem("authMetadata")) : state.user,
