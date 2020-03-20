@@ -30,7 +30,13 @@ const routes = [
     path: '/product-details/:id',
     name: 'product_details',
     component: () => import(/* webpackChunkName: "about" */ '../views/product_details')
+  },
+  {
+    path: '/authenticated/dashboard',
+    name: 'account-board',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Auth/account-board')
   }
+
 ];
 
 const router = new VueRouter({

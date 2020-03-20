@@ -22,7 +22,7 @@
                             <div class="col-lg-4">
                                 <div class="main-navigation flex-lg-right">
                                     <div class="cart-widget">
-                                        <div class="login-block">
+                                        <div class="login-block" v-show="getAuthenticated === true">
                                             <router-link to="/auth/login" class="font-weight-bold">Login</router-link><br>
                                             <span>or</span><router-link to="/auth/login" >Register</router-link>
                                         </div>

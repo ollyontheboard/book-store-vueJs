@@ -36,10 +36,11 @@
                                 class="icons-left fas fa-user"></i>
                             My Account</a><i class="fas fa-chevron-down dropdown-arrow"></i>
                             <ul class="dropdown-box">
-                                <li> <a href="#">My Account</a></li>
-                                <li> <a href="#">Order History</a></li>
-                                <li> <a href="#">Transactions</a></li>
-                                <li> <a href="#">Downloads</a></li>
+
+                                <li> <router-link to="/authenticated/dashboard">My Account</router-link></li>
+                                <li> <router-link to="/authenticated/dashboard">Order History</router-link></li>
+                                <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
+                                <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="icons-left fas fa-phone"></i> Contact</a>
