@@ -128,7 +128,8 @@
                             message: response.message,
                             position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
                             // eslint-disable-next-line no-unused-vars
-                        })
+                        });
+                        this.$router.push('/authenticated/dashboard');
                         // eslint-disable-next-line no-unused-vars
                     }).catch(error => {
                         this.$iziToast.error({

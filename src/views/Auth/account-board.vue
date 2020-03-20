@@ -225,7 +225,7 @@
     export default {
         name: "account-board",
         components: {pageFooter, topHeader},
-        beforeMount() {
+        created() {
 
         }
     }
