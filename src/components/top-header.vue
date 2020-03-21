@@ -65,9 +65,12 @@
                                                 </div>
                                                 <div class=" single-cart-block ">
                                                     <div class="btn-block">
-                                                        <a href="cart.html" class="btn">View Cart <i
-                                                                class="fas fa-chevron-right"></i></a>
-                                                        <a href="checkout.html" class="btn btn--primary">Check Out <i
+                                                        <router-link class="btn"
+                                                                     :to="{ name: 'view-cart'}">
+                                                            View Cart <i
+                                                                class="fas fa-chevron-right"></i>
+                                                        </router-link>
+                                                        <a href="#" class="btn btn--primary">Check Out <i
                                                                 class="fas fa-chevron-right"></i></a>
                                                     </div>
                                                 </div>

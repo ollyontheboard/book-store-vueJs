@@ -43,6 +43,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/product_details')
   },
   {
+    path: '/view-cart/',
+    name: 'view-cart',
+    component: () => import(/* webpackChunkName: "about" */ '../views/view-cart')
+  },
+  {
     path: '/authenticated/dashboard',
     beforeEnter:IsLoggedIn,
     name: 'account-board',
