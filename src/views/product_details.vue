@@ -186,7 +186,7 @@
     </div>
 </template>
 
-<script lang="js">
+<script>
     const pageFooter = () => import('@/components/footer.vue');
     const topHeader = () => import('@/components/top-header.vue');
 
@@ -221,7 +221,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
