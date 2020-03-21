@@ -23,33 +23,43 @@
                                 <div class="main-navigation flex-lg-right">
                                     <div class="cart-widget">
                                         <div class="login-block" v-show="getAuthenticated === false">
-                                            <router-link to="/auth/login" class="font-weight-bold">Login</router-link><br>
-                                            <span>or</span><router-link to="/auth/login" >Register</router-link>
+                                            <router-link to="/auth/login" class="font-weight-bold">Login</router-link>
+                                            <br>
+                                            <span>or</span>
+                                            <router-link to="/auth/login">Register</router-link>
                                         </div>
                                         <div class="cart-block">
                                             <div class="cart-total">
                                             <span class="text-number">
-                                                1
+                                                {{getCart.length}}
                                             </span>
                                                 <span class="text-item">
                                                 Shopping Cart
                                             </span>
                                                 <span class="price">
-                                                £0.00
+                                                ₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}
                                                 <i class="fas fa-chevron-down"></i>
                                             </span>
                                             </div>
                                             <div class="cart-dropdown-block">
-                                                <div class=" single-cart-block ">
+                                                <div class=" single-cart-block " v-for="item in getCart" :key="item.id">
                                                     <div class="cart-product">
-                                                        <a href="product-details.html" class="../assets/image">
-                                                            <img src="../assets/image/products/cart-product-1.jpg" alt="">
-                                                        </a>
+                                                        <router-link class="../assets/image"
+                                                                     :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
+                                                            <img :src='url+item.image'
+                                                                 style="height: 50px; width: 50px;" alt="">
+                                                        </router-link>
                                                         <div class="content">
-                                                            <h3 class="title"><a href="product-details.html">Kodak PIXPRO
-                                                                Astro Zoom AZ421 16 MP</a></h3>
-                                                            <p class="price"><span class="qty">1 ×</span> £87.34</p>
-                                                            <button class="cross-btn"><i class="fas fa-times"></i></button>
+                                                            <h3>
+                                                                <router-link class="title"
+                                                                             :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
+                                                                    {{item.name}}
+                                                                </router-link>
+                                                            </h3>
+                                                            <p class="price"><span class="qty">{{item.qty}}×</span>
+                                                                ₦{{item.price}}</p>
+                                                            <button @click="removeItem(item)" class="cross-btn"><i class="fas fa-times"></i>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -76,12 +86,12 @@
 
             <mobile_nav></mobile_nav>
 
-    </div>
+        </div>
     </div>
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapActions, mapGetters} from "vuex";
 
     const mobile_nav = () => import('./header-components/mobile-header-nav');
     const authenticatedNav = () => import('./header-components/authenticated_nav');
@@ -89,6 +99,11 @@
 
     export default {
         name: 'Home',
+        data() {
+            return {
+                url: process.env.VUE_APP_APIURL + 'uploads/',
+            }
+        },
         components: {
             mobile_nav,
             authenticatedNav,
@@ -96,8 +111,34 @@
         },
         computed: {
             ...mapGetters({
-                getAuthenticated: "user"
-            })
+                getAuthenticated: "user",
+                getCart: "cart"
+            }),
+
+            /**
+             * @return {number}
+             */
+            Total() {
+                let total = 0;
+                this.getCart.forEach(item => {
+                    total += (item.price * item.qty);
+                });
+                return total;
+            }
+
+        },
+        watch: {
+            // eslint-disable-next-line no-unused-vars
+            getCart: function (newValue, oldValue) {
+                return newValue
+            }
+        },
+        methods:{
+            ...mapActions(['sliceCart']),
+
+            removeItem(index) {
+               this.sliceCart(index);
+            }
         },
         mounted() {
         }

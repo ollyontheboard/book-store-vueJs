@@ -38,15 +38,15 @@
                                             <img :src='url+item.image' alt="">
                                         </router-link>
                                         <div class="hover-btns">
-                                            <a href="cart.html" class="single-btn">
+                                            <a href="javascript:void(0);" @click="addItem(item)" class="single-btn">
                                                 <i class="fas fa-shopping-basket"></i>
                                             </a>
-                                            <a href="wishlist.html" class="single-btn">
-                                                <i class="fas fa-heart"></i>
-                                            </a>
-                                            <a href="compare.html" class="single-btn">
-                                                <i class="fas fa-random"></i>
-                                            </a>
+<!--                                            <a href="wishlist.html" class="single-btn">-->
+<!--                                                <i class="fas fa-heart"></i>-->
+<!--                                            </a>-->
+<!--                                            <a href="compare.html" class="single-btn">-->
+<!--                                                <i class="fas fa-random"></i>-->
+<!--                                            </a>-->
 <!--                                            <a href="#" data-toggle="modal" data-target="#quickModal"-->
 <!--                                               class="single-btn">-->
 <!--                                                <i class="fas fa-eye"></i>-->
@@ -202,13 +202,14 @@
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapGetters,mapActions} from "vuex";
 
     export default {
         name: "section-two",
         data: function () {
             return {
                 url: process.env.VUE_APP_APIURL + 'uploads/',
+                cartItems: []
                 // products: JSON.parse(localStorage.getItem("products_cat1"))
             };
         },
@@ -216,7 +217,16 @@
             ...mapGetters({
                 productsGetter: "allProducts"
             })
-        }
+        },
+        methods:{
+            ...mapActions(['addToCart']),
+            addItem(item){
+              this.addToCart(item)
+            },
+            removeItem(index) {
+                this.items.splice(index, 1)
+            }
+        },
     }
 </script>
 

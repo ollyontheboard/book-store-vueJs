@@ -206,6 +206,14 @@
         },
         methods:{
             ...mapActions(['getallProduct']),
+
+            ...mapActions(['addToCart']),
+                addItem(item){
+                    this.addToCart(item)
+                },
+                removeItem(index) {
+                    this.items.splice(index, 1)
+                }
         },
         created() {
             this.id = this.$route.params.id;

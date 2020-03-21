@@ -30,19 +30,22 @@
                                     <div class="row">
                                         <div class="col-md-12 col-12 mb--15">
                                             <label for="email">Full Name</label>
-                                            <input class="mb-0 form-control" id="name" placeholder="Enter your full name"
+                                            <input class="mb-0 form-control" id="name"
+                                                   placeholder="Enter your full name"
                                                    required type="text"
                                                    v-model="userData.full_name">
                                         </div>
                                         <div class="col-12 mb--20">
                                             <label for="email">Email</label>
-                                            <input class="mb-0 form-control" id="email" placeholder="Enter Your Email Address Here.." required
+                                            <input class="mb-0 form-control" id="email"
+                                                   placeholder="Enter Your Email Address Here.." required
                                                    type="email"
                                                    v-model="userData.email">
                                         </div>
                                         <div class="col-lg-6 mb--20">
                                             <label for="password">Password</label>
-                                            <input class="mb-0 form-control" id="password" placeholder="Enter your password" required
+                                            <input class="mb-0 form-control" id="password"
+                                                   placeholder="Enter your password" required
                                                    type="password" v-model="userData.password">
                                         </div>
                                         <div class="col-lg-6 mb--20">
@@ -66,13 +69,15 @@
                                     <div class="row">
                                         <div class="col-md-12 col-12 mb--15">
                                             <label for="email">Enter your email address here...</label>
-                                            <input class="mb-0 form-control" id="email1" placeholder="Enter you email address here..."
+                                            <input class="mb-0 form-control" id="email1"
+                                                   placeholder="Enter you email address here..."
                                                    required type="email"
                                                    v-model="AuthData.email">
                                         </div>
                                         <div class="col-12 mb--20">
                                             <label for="password">Password</label>
-                                            <input class="mb-0 form-control" id="login-password" placeholder="Enter your password"
+                                            <input class="mb-0 form-control" id="login-password"
+                                                   placeholder="Enter your password"
                                                    required type="password"
                                                    v-model="AuthData.password">
                                         </div>

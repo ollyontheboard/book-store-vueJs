@@ -38,19 +38,19 @@
                                             <img :src='url+item.image' alt="">
                                         </router-link>
                                         <div class="hover-btns">
-                                            <a href="cart.html" class="single-btn">
+                                            <a href="javascript:void(0);" @click="addItem(item)" class="single-btn">
                                                 <i class="fas fa-shopping-basket"></i>
                                             </a>
-                                            <a href="wishlist.html" class="single-btn">
-                                                <i class="fas fa-heart"></i>
-                                            </a>
-                                            <a href="compare.html" class="single-btn">
-                                                <i class="fas fa-random"></i>
-                                            </a>
-<!--                                            <a href="#" data-toggle="modal" data-target="#quickModal"-->
-<!--                                               class="single-btn">-->
-<!--                                                <i class="fas fa-eye"></i>-->
-<!--                                            </a>-->
+                                            <!--                                            <a href="wishlist.html" class="single-btn">-->
+                                            <!--                                                <i class="fas fa-heart"></i>-->
+                                            <!--                                            </a>-->
+                                            <!--                                            <a href="compare.html" class="single-btn">-->
+                                            <!--                                                <i class="fas fa-random"></i>-->
+                                            <!--                                            </a>-->
+                                            <!--                                            <a href="#" data-toggle="modal" data-target="#quickModal"-->
+                                            <!--                                               class="single-btn">-->
+                                            <!--                                                <i class="fas fa-eye"></i>-->
+                                            <!--                                            </a>-->
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapActions, mapGetters} from "vuex";
 
     export default {
         name: "section-two",
@@ -84,7 +84,13 @@
             ...mapGetters({
                 productsGetter: "allProducts"
             })
-        }
+        },
+        methods:{
+            ...mapActions(['addToCart']),
+            addItem(item){
+                this.addToCart(item)
+            },
+        },
     }
 </script>
 

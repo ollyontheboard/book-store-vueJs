@@ -1,5 +1,6 @@
 import intergration_layer from "../../services/http-integration";
-
+import Vue from 'vue'
+import iziToast from 'izitoast';
 export default {
   state: {
     loggedin: false,
@@ -8,7 +9,8 @@ export default {
       access: null,
     },
     products: false,
-    product_details:false
+    product_details:false,
+    cartItems: []
   },
   mutations: {
     "setUser"(state, user) {
@@ -45,6 +47,25 @@ export default {
       }else {
         state.products = localStorage.getItem('products_cat1')
       }
+    },
+    "addtoCart"(state, itemToAdd) {
+      // eslint-disable-next-line no-unused-vars
+      let found = false;
+      itemToAdd.qty = 1;
+      // Add the item or increase qty
+      let itemInCart =  state.cartItems.filter(item => item.id===itemToAdd.id);
+      let isItemInCart = itemInCart.length > 0;
+
+      if (isItemInCart === false) {
+        state.cartItems.push(Vue.util.extend({}, itemToAdd));
+      } else {
+        itemInCart[0].qty += itemToAdd.qty;
+      }
+      itemToAdd.qty = 1;
+    },
+    "removefromCart"(state, index) {
+      // eslint-disable-next-line no-unused-vars
+      state.cartItems.splice(index, 1)
     },
     "setProducts"(state, data) {
       if (navigator.onLine) {
@@ -129,6 +150,18 @@ export default {
       commit('clearUser', data);
       commit('clearAccessToken', data);
     },
+    async addToCart({commit}, data){
+     commit('addtoCart', data);
+      iziToast.success({
+        title: 'Hey',
+        message: "Product Added to cart successfully",
+        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+        // eslint-disable-next-line no-unused-vars
+      });
+    },
+    async sliceCart({commit}, data){
+     commit('removefromCart', data)
+    }
   },
   getters: {
     user: state => state.user,
@@ -137,5 +170,6 @@ export default {
     allProducts: state => state.products,
     product: state => state.product_details,
     auth: state => state,
+    cart: state => state.cartItems
   }
 };
