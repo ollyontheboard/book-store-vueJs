@@ -51,7 +51,7 @@
                                                      style="height: 50px; width: 50px;" alt="product">
                                             </router-link></td>
                                             <td class="pro-title"><a href="#">{{item.name}}</a></td>
-                                            <td class="pro-price"><span>₦{{(item.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></td>
+<!--                                            <td class="pro-price"><span>₦{{(item.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></td>-->
                                             <td class="pro-quantity">
                                                 <div class="pro-qty">
                                                     <div class="count-input-block">
@@ -79,7 +79,7 @@
                                 <div class="cart-summary-wrap">
                                     <h4><span>Cart Summary</span></h4>
                                     <p>Sub Total <span class="text-primary">₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></p>
-<!--                                    <p>Shipping Cost <span class="text-primary">₦{{(0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></p>-->
+                                    <p>Shipping Cost <span class="text-primary">₦{{(0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></p>
                                     <h2>Grand Total <span class="text-primary">₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></h2>
                                 </div>
                                 <div class="cart-summary-button">
@@ -97,7 +97,7 @@
     </div>
 </template>
 
-<script>
+<script lang="js">
     import {mapActions, mapGetters} from "vuex";
     const pageFooter = () => import('@/components/footer.vue');
     const topHeader = () => import('@/components/top-header.vue');
