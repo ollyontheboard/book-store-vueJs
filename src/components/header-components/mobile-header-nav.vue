@@ -13,7 +13,10 @@
                             <div class="mobile-header-btns header-top-widget">
                                 <ul class="header-links">
                                     <li class="sin-link">
-                                        <a href="cart.html" class="cart-link link-icon"><i class="ion-bag"></i></a>
+                                        <router-link class="cart-link link-icon"
+                                        :to="{ name: 'view-cart'}">
+                                            <i class="ion-bag"></i>
+                                        </router-link>
                                     </li>
                                     <li class="sin-link">
                                         <a href="javascript:" class="link-icon hamburgur-icon off-canvas-btn"><i
@@ -73,13 +76,6 @@
                     <nav class="off-canvas-nav">
                         <ul class="mobile-menu menu-block-2">
                             <li class="menu-item-has-children">
-                                <a href="#">Currency - USD $ <i class="fas fa-angle-down"></i></a>
-                                <ul class="sub-menu">
-                                    <li> <a href="cart.html">USD $</a></li>
-                                    <li> <a href="checkout.html">EUR €</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
                                 <a href="#">Lang - Eng<i class="fas fa-angle-down"></i></a>
                                 <ul class="sub-menu">
                                     <li>Eng</li>
@@ -89,10 +85,10 @@
                             <li class="menu-item-has-children" v-show="getAuthenticated !== false">
                                 <a href="#">My Account <i class="fas fa-angle-down"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">My Account</a></li>
-                                    <li><a href="#">Order History</a></li>
-                                    <li><a href="#">Transactions</a></li>
-                                    <li><a href="#">Downloads</a></li>
+                                    <li> <router-link to="/authenticated/dashboard">My Account</router-link></li>
+                                    <li> <router-link to="/authenticated/dashboard">Order History</router-link></li>
+                                    <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
+                                    <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
                                 </ul>
                             </li>
                         </ul>
