@@ -42,7 +42,7 @@
                                         <tbody>
                                         <!-- Product Row -->
                                         <tr v-for="item in getCart" :key="item.id">
-                                            <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a>
+                                            <td class="pro-remove"><a href="javascript:void(0);" @click="removeItem(item)"><i class="far fa-trash-alt"></i></a>
                                             </td>
                                             <td class="pro-thumbnail">
                                                 <router-link class="../assets/image"
