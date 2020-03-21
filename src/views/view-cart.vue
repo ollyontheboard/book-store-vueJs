@@ -51,7 +51,7 @@
                                                      style="height: 50px; width: 50px;" alt="product">
                                             </router-link></td>
                                             <td class="pro-title"><a href="#">{{item.name}}</a></td>
-<!--                                            <td class="pro-price"><span>₦{{(item.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></td>-->
+                                            <td class="pro-price"><span>₦{{(item.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></td>
                                             <td class="pro-quantity">
                                                 <div class="pro-qty">
                                                     <div class="count-input-block">
