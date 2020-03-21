@@ -73,7 +73,8 @@
                                     <input type="number" class="form-control text-center" value="1">
                                 </div>
                                 <div class="add-cart-btn">
-                                    <a href="#" class="btn btn-outlined--primary"><span class="plus-icon">+</span>Add to
+                                    <a href="javascript:void(0);" @click="addItem(product_details)"
+                                       class="btn btn-outlined--primary"><span class="plus-icon">+</span>Add to
                                         Cart</a>
                                 </div>
                             </div>
@@ -138,7 +139,8 @@
                                         <input type="radio" name="star" id="star5">
                                         <label for="star5"></label>
                                     </span>
-                                    <form action="https://demo.hasthemes.com/pustok-preview/pustok/" class="mt--15 site-form ">
+                                    <form action="https://demo.hasthemes.com/pustok-preview/pustok/"
+                                          class="mt--15 site-form ">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-group">
@@ -188,14 +190,14 @@
     const pageFooter = () => import('@/components/footer.vue');
     const topHeader = () => import('@/components/top-header.vue');
 
-    import {mapActions,mapGetters} from "vuex";
+    import {mapActions, mapGetters} from "vuex";
 
     export default {
         name: "product_details",
-        data () {
+        data() {
             return {
                 id: 0,
-                url: process.env.VUE_APP_APIURL+'uploads/',
+                url: process.env.VUE_APP_APIURL + 'uploads/',
             }
         },
         components: {pageFooter, topHeader},
@@ -204,16 +206,14 @@
                 product_details: "product"
             })
         },
-        methods:{
+        methods: {
             ...mapActions(['getallProduct']),
 
             ...mapActions(['addToCart']),
-                addItem(item){
-                    this.addToCart(item)
-                },
-                removeItem(index) {
-                    this.items.splice(index, 1)
-                }
+            addItem(item) {
+                this.addToCart(item)
+            },
+
         },
         created() {
             this.id = this.$route.params.id;
