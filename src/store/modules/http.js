@@ -12,12 +12,20 @@ export default {
   },
   mutations: {
     "setUser"(state, user) {
+      localStorage.removeItem("authMetadata");
+      state.user = false;
       localStorage.setItem("authMetadata", JSON.stringify(user));
       state.user = user;
     },
     // eslint-disable-next-line no-unused-vars
+    "setUserAuth"(state, user) {
+      state.user = JSON.parse(localStorage.getItem("authMetadata"));
+    },
+    // eslint-disable-next-line no-unused-vars
     "clearUser"(state, user) {
       state.user = false;
+      state.loggedin = false;
+      localStorage.removeItem("authMetadata");
     },
     "setAccessToken"(state, token) {
       localStorage.setItem("accessToken", token);
@@ -30,7 +38,6 @@ export default {
     "setLoggedIn"(state, status) {
       state.loggedin = status;
     },
-
     "setAllProducts"(state, data) {
       if (navigator.onLine) {
         state.products = data;
@@ -49,7 +56,14 @@ export default {
     }
   },
   actions: {
-   async authenticate({ commit }, data) {
+   async authInit({ commit }, data) {
+      try {
+        commit("setUserAuth", data);
+      }catch (error) {
+        throw new Error(error.response.data.error);
+      }
+    },
+    async authenticate({ commit }, data) {
       try {
         let response = await intergration_layer.authenticate(data);
           commit("setLoggedIn", true);
@@ -108,12 +122,16 @@ export default {
         throw new Error(error.response.data.error);
       }
     },
-    ManualData({commit}, DemoJson) {
+    async ManualData({commit}, DemoJson) {
       commit('setAllProducts', DemoJson.data.products);
+    },
+    async logOut({commit}, data) {
+      commit('clearUser', data);
+      commit('clearAccessToken', data);
     },
   },
   getters: {
-    user: state => localStorage.getItem("authMetadata") !== null ? JSON.parse(localStorage.getItem("authMetadata")) : state.user,
+    user: state => state.user,
     loggedin: state => state.loggedin,
     accesstoken: state => state.tokens.access,
     allProducts: state => state.products,

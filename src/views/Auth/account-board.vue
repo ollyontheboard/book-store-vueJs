@@ -27,7 +27,6 @@
                                             class="fas fa-tachometer-alt"></i>
                                         Dashboard</a>
                                     <a href="#orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> Orders</a>
-                                    <a href="#download" data-toggle="tab"><i class="fas fa-download"></i> Download</a>
                                     <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i>
                                         Payment
                                         Method</a>
@@ -35,7 +34,7 @@
                                         address</a>
                                     <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account
                                         Details</a>
-                                    <a href="login-register.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                                    <a href="#" @click="logOutToken()"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                 </div>
                             </div>
                             <!-- My Account Tab Menu End -->
@@ -47,13 +46,13 @@
                                         <div class="myaccount-content">
                                             <h3>Dashboard</h3>
                                             <div class="welcome mb-20">
-                                                <p>Hello, <strong>Alex Tuntuni</strong> (If Not <strong>Tuntuni
-                                                    !</strong><a href="login-register.html" class="logout">
+                                                <p>Hello, <strong>{{getAuthenticated.full_name}}</strong> (If Not <strong>{{getAuthenticated.full_name}}
+                                                    !</strong><a href="#" @click="logOutToken()" class="logout">
                                                     Logout</a>)</p>
                                             </div>
                                             <p class="mb-0">From your account dashboard. you can easily check &amp; view
                                                 your
-                                                recent orders, manage your shipping and billing addresses and edit your
+                                                recent orders, manage your shipping address and edit your
                                                 password and account details.</p>
                                         </div>
                                     </div>
@@ -106,37 +105,6 @@
                                     </div>
                                     <!-- Single Tab Content End -->
                                     <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="download" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Downloads</h3>
-                                            <div class="myaccount-table table-responsive text-center">
-                                                <table class="table table-bordered">
-                                                    <thead class="thead-light">
-                                                    <tr>
-                                                        <th>Product</th>
-                                                        <th>Date</th>
-                                                        <th>Expire</th>
-                                                        <th>Download</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Mostarizing Oil</td>
-                                                        <td>Aug 22, 2018</td>
-                                                        <td>Yes</td>
-                                                        <td><a href="#" class="btn">Download File</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Katopeno Altuni</td>
-                                                        <td>Sep 12, 2018</td>
-                                                        <td>Never</td>
-                                                        <td><a href="#" class="btn">Download File</a></td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <!-- Single Tab Content End -->
                                     <!-- Single Tab Content Start -->
                                     <div class="tab-pane fade" id="payment-method" role="tabpanel">
@@ -219,14 +187,35 @@
 </template>
 
 <script lang="js">
+    import {mapActions, mapGetters} from "vuex";
+    import store from "../../store/store";
+
     const pageFooter = () => import('@/components/footer.vue');
     const topHeader = () => import('@/components/top-header.vue');
 
     export default {
         name: "account-board",
         components: {pageFooter, topHeader},
+        computed: {
+            ...mapGetters({
+                getAuthenticated: "user"
+            })
+        },
+        methods:{
+            ...mapActions(['logOut']),
+           async logOutToken(){
+                // eslint-disable-next-line no-unused-vars
+              await this.logOut();
+                  await  this.$router.push('/');
+            }
+        },
         created() {
-
+            const accessToken = localStorage.getItem("accessToken");
+            const authMetadata = localStorage.getItem("authMetadata");
+            if (accessToken) {
+                store.dispatch('authInit', authMetadata)
+                    .then();
+            }
         }
     }
 </script>

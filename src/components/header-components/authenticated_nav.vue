@@ -1,6 +1,6 @@
 <template>
     <div class="authenticated_nav">
-        <div class="container" v-show="getAuthenticated !== false">
+        <div class="container" v-show="this.getAuthenticated !== false">
             <div class="row">
                 <div class="col-lg-4">
                     <ul class="header-top-list">
@@ -64,12 +64,6 @@
             ...mapGetters({
                 getAuthenticated: "user"
             })
-        },
-        watch:{
-            // eslint-disable-next-line no-unused-vars
-            getAuthenticated:function (oldval, newval) {
-                return oldval;
-            }
         }
     }
 </script>
