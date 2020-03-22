@@ -25,6 +25,15 @@ export default (to, from, next) => {
                 updated_at: "2020-03-22 10:18:17"
             },
             {
+                id: 14,
+                name: "alex idowu",
+                price: "76876",
+                description: "hghvhjvhvjhvjhvh",
+                image: "https://cdn.filestackcontent.com/qJIzL6lgTKOanItutBI2",
+                created_at: "2020-03-22 10:22:54",
+                updated_at: "2020-03-22 10:22:54"
+            },
+            {
                 id: 11,
                 name: "Learn Java",
                 price: "500030",
@@ -96,7 +105,7 @@ export default (to, from, next) => {
                 created_at: "2020-03-12 14:22:04",
                 updated_at: "2020-03-22 10:18:00"
             }
-            ],
+        ]
   }
   };
 
