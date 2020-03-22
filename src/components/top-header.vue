@@ -70,8 +70,8 @@
                                                             View Cart <i
                                                                 class="fas fa-chevron-right"></i>
                                                         </router-link>
-                                                        <router-link class="btn btn--primary" to="/checkout">Check Out <i
-                                                                class="fas fa-chevron-right"></i></router-link>
+                                                        <a href="javascript:" v-show="this.$route.name !== 'checkout'" @click="checkout" class="btn btn--primary">Check Out <i
+                                                                class="fas fa-chevron-right"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,9 +138,14 @@
         },
         methods:{
             ...mapActions(['sliceCart']),
+            ...mapActions(['checkoutData']),
 
             removeItem(index) {
                this.sliceCart(index);
+            },
+            async checkout(data){
+                await this.checkoutData(data);
+                this.$router.push('/checkout');
             }
         },
         mounted() {

@@ -6,6 +6,7 @@ import IsLoggedIn from "./guard/IsLoggedIn";
 import AuthInit from "./guard/Authinit";
 import InitProduct from "./guard/initProduct";
 import mountAuth from "./guard/mountAuth";
+import mountCheckoutData from "./guard/mountCheckout";
 
 
 
@@ -49,9 +50,17 @@ const routes = [
   },
   {
     path: '/checkout/',
-    beforeEnter: mountAuth,
+    props: true,
+    beforeEnter: multiple([mountAuth, mountCheckoutData] ),
     name: 'checkout',
     component: () => import(/* webpackChunkName: "about" */ '../views/checkout')
+  },
+  {
+    path: '/checked/complete',
+    props: true,
+    beforeEnter: multiple([mountAuth] ),
+    name: 'checkout-complete',
+    component: () => import(/* webpackChunkName: "about" */ '../views/checkout-complete')
   },
   {
     path: '/authenticated/dashboard',

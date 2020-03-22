@@ -45,4 +45,10 @@ export default {
             .then(response => response.data)
             .catch(error => Promise.reject(error.response));
     },
+    checkOut(data) {
+        return axios
+            .post(process.env.VUE_APP_APIURL + "api/v1/checkout/", data)
+            .then(response => response.data)
+            .catch(error => Promise.reject(error.response));
+    },
 };

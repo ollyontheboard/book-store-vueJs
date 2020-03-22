@@ -16,10 +16,11 @@
                                 src="../../assets/image/icon/eng-flag.png" alt=""></span>en-gb </a><i
                                 class="fas fa-chevron-down dropdown-arrow"></i>
                             <ul class="dropdown-box">
-                                <li> <a href="#"> <span class="flag-img"><img src="../../assets/image/icon/eng-flag.png"
-                                                                              alt=""></span>English</a></li>
-                                <li> <a href="#"> <span class="flag-img"><img src="../../assets/image/icon/germany-flag.png"
-                                                                              alt=""></span>Germany</a></li>
+                                <li><a href="#"> <span class="flag-img"><img src="../../assets/image/icon/eng-flag.png"
+                                                                             alt=""></span>English</a></li>
+                                <li><a href="#"> <span class="flag-img"><img
+                                        src="../../assets/image/icon/germany-flag.png"
+                                        alt=""></span>Germany</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -37,17 +38,25 @@
                             My Account</a><i class="fas fa-chevron-down dropdown-arrow"></i>
                             <ul class="dropdown-box">
 
-                                <li> <router-link to="/authenticated/dashboard">My Account</router-link></li>
-                                <li> <router-link to="/authenticated/dashboard">Order History</router-link></li>
-                                <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
-                                <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
+                                <li>
+                                    <router-link to="/authenticated/dashboard">My Account</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/authenticated/dashboard">Order History</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/authenticated/dashboard">Transactions</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/authenticated/dashboard">Transactions</router-link>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <router-link to="/contact"><i class="icons-left fas fa-phone"></i> Contact</router-link>
                         </li>
                         <li>
-                            <router-link to="/checkout"><i class="icons-left fas fa-share"></i> Checkout</router-link>
+                            <a href="javascript:" v-show="this.$route.name !== 'checkout'" @click="checkout()"><i class="icons-left fas fa-share"></i> Checkout</a>
                         </li>
                     </ul>
                 </div>
@@ -57,7 +66,7 @@
 </template>
 
 <script>
-    import {mapGetters} from "vuex";
+    import {mapActions, mapGetters} from "vuex";
 
     export default {
         name: "authenticated_nav",
@@ -66,6 +75,14 @@
             ...mapGetters({
                 getAuthenticated: "user"
             })
+        },
+        methods:{
+            ...mapActions(['checkoutData']),
+
+            async checkout(data){
+                await this.checkoutData(data);
+                this.$router.push('/checkout');
+            }
         }
     }
 </script>

@@ -8,7 +8,7 @@
                 <div class="breadcrumb-contents">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"> <router-link to="/">Home</router-link></li>
                             <li class="breadcrumb-item active">Checkout</li>
                         </ol>
                     </nav>
@@ -21,16 +21,18 @@
                     <div class="col-12">
                         <!-- Checkout Form s-->
                         <div class="checkout-form">
+                            <form @submit.prevent="placeOrder()">
                             <div class="row row-40">
                                 <div class="col-12">
                                     <h1 class="quick-title">Checkout</h1>
                                     <!-- Slide Down Trigger  -->
                                     <!-- Slide Down Trigger  -->
                                     <div class="checkout-quick-box">
-                                    <p><i class="far fa-sticky-note"></i>Have a coupon? <a href="javascript:"
-                                                                                           class="slide-trigger" data-target="#quick-cupon">
-                                        You can still place order while logged in or not</a></p>
-                                </div>
+                                        <p><i class="far fa-sticky-note"></i>Checking out Orders? <a href="javascript:"
+                                                                                               class="slide-trigger"
+                                                                                               data-target="#quick-cupon">
+                                            You need to be logged in to continue</a></p>
+                                    </div>
                                     <!-- Slide Down Blox ==> Cupon Box -->
                                 </div>
                                 <div class="col-lg-7 mb--20">
@@ -40,53 +42,50 @@
                                         <div class="row">
                                             <div class="col-12 col-12 mb--20">
                                                 <label>Full Name*</label>
-                                                <input type="text" v-model="getAuthenticated.full_name" disabled placeholder="First Name">
+                                                <input type="text" disabled v-model="orderData.full_name" required
+                                                       placeholder="First Name">
                                             </div>
-<!--                                            <div class="col-12 mb&#45;&#45;20">-->
-<!--                                                <label>Company Name</label>-->
-<!--                                                <input type="text" placeholder="Company Name">-->
-<!--                                            </div>-->
+                                            <!--                                            <div class="col-12 mb&#45;&#45;20">-->
+                                            <!--                                                <label>Company Name</label>-->
+                                            <!--                                                <input type="text" placeholder="Company Name">-->
+                                            <!--                                            </div>-->
                                             <div class="col-12 col-12 mb--20">
                                                 <label>Country*</label>
-                                                <select class="nice-select">
-                                                    <option>Bangladesh</option>
-                                                    <option>China</option>
-                                                    <option>country</option>
-                                                    <option>India</option>
-                                                    <option>Japan</option>
+                                                <select disabled class="nice-select">
+                                                    <option>Nigeria</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
                                                 <label>Email Address*</label>
-                                                <input type="email" v-model="getAuthenticated.email" disabled placeholder="Email Address">
+                                                <input type="email" disabled v-model="orderData.email" required
+                                                       placeholder="Email Address">
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
                                                 <label>Phone no*</label>
-                                                <input type="text" placeholder="Phone number">
+                                                <input type="text" v-model="orderData.phone" placeholder="Phone number" required>
                                             </div>
                                             <div class="col-12 mb--20">
                                                 <label>Address*</label>
-                                                <input type="text" placeholder="Address line 1">
-                                                <input type="text" placeholder="Address line 2">
+                                                <input type="text" v-model="orderData.address" placeholder="Address line 1" required>
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
                                                 <label>Town/City*</label>
-                                                <input type="text" placeholder="Town/City">
+                                                <input type="text" v-model="orderData.city" placeholder="Town/City" required>
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
                                                 <label>State*</label>
-                                                <input type="text" placeholder="State">
+                                                <input type="text" v-model="orderData.state" placeholder="State" required>
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
-                                                <label>Zip Code*</label>
-                                                <input type="text" placeholder="Zip Code">
+                                                <label>Postal Code*</label>
+                                                <input type="text" v-model="orderData.postalCode" placeholder="Postal Code" required>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Shipping Address -->
                                     <div class="order-note-block mt--30">
                                         <label for="order-note">Order notes</label>
-                                        <textarea id="order-note" cols="30" rows="10" class="order-note"
+                                        <textarea id="order-note" v-model="orderData.orderNote" cols="30" rows="10" class="order-note"
                                                   placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                                     </div>
                                 </div>
@@ -98,18 +97,13 @@
                                                 <h2 class="checkout-title">YOUR ORDER</h2>
                                                 <h4>Product <span>Total</span></h4>
                                                 <ul>
-                                                    <li><span class="left">Cillum dolore tortor nisl X 01</span> <span
-                                                            class="right">$25.00</span></li>
-                                                    <li><span class="left">Auctor gravida pellentesque X 02 </span><span
-                                                            class="right">$50.00</span></li>
-                                                    <li><span class="left">Condimentum posuere consectetur X 01</span>
-                                                        <span class="right">$29.00</span></li>
-                                                    <li><span class="left">Habitasse dictumst elementum X 01</span>
-                                                        <span class="right">$10.00</span></li>
+                                                    <li v-for="item in getCheckoutData" :key="item.id">
+                                                        <span class="left">{{item.name}} X {{item.qty}}</span> <span
+                                                            class="right">₦{{(item.price * item.qty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></li>
                                                 </ul>
-                                                <p>Sub Total <span>$104.00</span></p>
-                                                <p>Shipping Fee <span>$00.00</span></p>
-                                                <h4>Grand Total <span>$104.00</span></h4>
+                                                <p>Sub Total <span>₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></p>
+                                                <p>Shipping Fee <span>₦{{(0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></p>
+                                                <h4>Grand Total <span>₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></h4>
                                                 <div class="method-notice mt--25">
                                                     <article>
                                                         <h3 class="d-none sr-only">blog-article</h3>
@@ -121,16 +115,17 @@
                                                     </article>
                                                 </div>
                                                 <div class="term-block">
-                                                    <input type="checkbox" id="accept_terms2">
+                                                    <input type="checkbox" required id="accept_terms2">
                                                     <label for="accept_terms2">I’ve read and accept the terms &
                                                         conditions</label>
                                                 </div>
-                                                <button class="place-order w-100">Place order</button>
+                                                <button type="submit" class="place-order w-100">Place order</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -144,7 +139,7 @@
 
 <script lang="js">
     // import {mapActions, mapGetters} from "vuex";
-    import {mapGetters} from "vuex";
+    import {mapGetters,mapActions} from "vuex";
 
     const pageFooter = () => import('@/components/footer.vue');
     const topHeader = () => import('@/components/top-header.vue');
@@ -152,7 +147,11 @@
         name: "checkout",
         data() {
             return {
-                url: process.env.VUE_APP_APIURL + 'uploads/',
+                orderData: {
+                    checkoutProduct: {
+
+                    }
+                }
             }
         },
         components: {
@@ -161,14 +160,60 @@
         },
         computed: {
             ...mapGetters({
-                getAuthenticated: "user"
-            })
-        },
-        methods:{
+                getAuthenticated: "user",
+                getCheckoutData: "checkoutData"
+            }),
+            /**
+             * @return {number}
+             */
+            Total() {
+                let total = 0;
+                this.getCheckoutData.forEach(item => {
+                    total += (item.price * item.qty);
+                });
+                return total;
+            }
 
         },
+        watch: {
+            // eslint-disable-next-line no-unused-vars
+            getCheckoutData: function (newValue, oldValue) {
+                return newValue
+            }
+        },
+        methods: {
+            ...mapActions(['creatOrder']),
+           async placeOrder(){
+                if (this.getAuthenticated === false){
+                    this.$iziToast.error({
+                        title: 'Hey',
+                        message: 'Kindly login to proceed with checkout',
+                        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                        // eslint-disable-next-line no-unused-vars
+                    })
+                }
+                // eslint-disable-next-line no-unused-vars
+               await this.creatOrder(this.orderData).then(async (response) => {
+                  await  this.$iziToast.success({
+                        title: 'Hey',
+                        message: "Order Placed Successfully",
+                        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                    });
+                  await this.$router.push({ name: 'checkout-complete', params: { orderData: response }, prop:{orderData: response} });
+
+                   // eslint-disable-next-line no-unused-vars
+                }).catch(error => {
+                    this.$iziToast.error({
+                        title: 'Hey',
+                        message: "Checkout unsuccessfull server error",
+                        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                        // eslint-disable-next-line no-unused-vars
+                    });
+                });
+            }
+        },
         mounted() {
-            setTimeout(function() {
+            setTimeout(function () {
                 // Get the head tag
                 var head_ID = document.getElementsByTagName("head")[0];
                 // Create script element
@@ -179,6 +224,13 @@
                 script_element.src = 'js/custom.js';
                 head_ID.appendChild(script_element);
             }, 300);
+            if (this.getAuthenticated === false){
+                this.orderData = {};
+                this.orderData.checkoutProduct = this.getCheckoutData
+            }else {
+                this.orderData = this.getAuthenticated;
+                this.orderData.checkoutProduct = this.getCheckoutData;
+            }
         }
     }
 </script>

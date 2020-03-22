@@ -8,7 +8,7 @@
                 <div class="breadcrumb-contents">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"> <router-link to="/">Home</router-link></li>
                             <li class="breadcrumb-item active">Cart</li>
                         </ol>
                     </nav>
@@ -83,7 +83,7 @@
                                     <h2>Grand Total <span class="text-primary">₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></h2>
                                 </div>
                                 <div class="cart-summary-button">
-                                    <router-link to="/checkout" class="checkout-btn c-btn btn--primary">Check Out</router-link>
+                                    <a href="javascript:" @click="checkout()" class="checkout-btn c-btn btn--primary">Check Out</a>
                                 </div>
                             </div>
                         </div>
@@ -138,8 +138,14 @@
         methods:{
             ...mapActions(['sliceCart']),
 
+            ...mapActions(['checkoutData']),
+
             removeItem(index) {
                 this.sliceCart(index);
+            },
+            async checkout(data){
+                await this.checkoutData(data);
+                this.$router.push('/checkout');
             }
         },
         mounted() {

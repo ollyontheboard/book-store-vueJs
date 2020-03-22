@@ -7,13 +7,13 @@ import VueOffline from 'vue-offline'
 import iziToast from 'izitoast';
 import "izitoast/dist/css/iziToast.css";
 
+
 import $ from 'jquery'
 window.$ = $;
 window.jQuery = $;
 
 Vue.use(VueOffline);
 Vue.prototype.$iziToast = iziToast;
-
 
 import "@/assets/css/plugins.css"
 import "@/assets/css/main.css"
