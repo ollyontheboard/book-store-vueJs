@@ -191,6 +191,7 @@
                     })
                 } else {
                     if(this.getCheckoutData) {
+                        this.orderData.checkoutProduct = this.getCheckoutData;
                         // eslint-disable-next-line no-unused-vars
                         await this.creatOrder(this.orderData).then(async (response) => {
                             await this.$iziToast.success({
@@ -239,9 +240,6 @@
                 if (this.getAuthenticated === false) {
                     this.orderData = {};
                     this.orderData.checkoutProduct = this.getCheckoutData
-                } else {
-                    // this.orderData = this.getAuthenticated;
-                    this.orderData.checkoutProduct = this.getCheckoutData;
                 }
             },
         }
