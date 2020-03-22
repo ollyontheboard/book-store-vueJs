@@ -148,9 +148,7 @@
         data() {
             return {
                 orderData: {
-                    checkoutProduct: {
-
-                    }
+                    checkoutProduct: {}
                 }
             }
         },
@@ -183,53 +181,59 @@
         },
         methods: {
             ...mapActions(['creatOrder']),
-           async placeOrder(){
-                if (this.getAuthenticated === false){
+            async placeOrder() {
+                if (this.getAuthenticated === false) {
                     this.$iziToast.error({
                         title: 'Hey',
                         message: 'Kindly login to proceed with checkout',
                         position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
                         // eslint-disable-next-line no-unused-vars
                     })
-                }
-                // eslint-disable-next-line no-unused-vars
-               await this.creatOrder(this.orderData).then(async (response) => {
-                  await  this.$iziToast.success({
-                        title: 'Hey',
-                        message: "Order Placed Successfully",
-                        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-                    });
-                  await this.$router.push({ name: 'checkout-complete', params: { orderData: response }, prop:{orderData: response} });
+                } else {
+                    // eslint-disable-next-line no-unused-vars
+                    await this.creatOrder(this.orderData).then(async (response) => {
+                        await this.$iziToast.success({
+                            title: 'Hey',
+                            message: "Order Placed Successfully",
+                            position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                        });
+                        await this.$router.push({
+                            name: 'checkout-complete',
+                            params: {orderData: response},
+                            prop: {orderData: response}
+                        });
 
-                   // eslint-disable-next-line no-unused-vars
-                }).catch(error => {
-                    this.$iziToast.error({
-                        title: 'Hey',
-                        message: "Checkout unsuccessfull server error",
-                        position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
                         // eslint-disable-next-line no-unused-vars
+                    }).catch(error => {
+                        this.$iziToast.error({
+                            title: 'Hey',
+                            message: "Checkout unsuccessfull server error",
+                            position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                            // eslint-disable-next-line no-unused-vars
+                        });
                     });
-                });
-            }
-        },
-        mounted() {
-            setTimeout(function () {
-                // Get the head tag
-                var head_ID = document.getElementsByTagName("head")[0];
-                // Create script element
-                var script_element = document.createElement('script');
-                // Set the script type to JavaScript
-                script_element.type = 'text/javascript';
-                // External JS file
-                script_element.src = 'js/custom.js';
-                head_ID.appendChild(script_element);
-            }, 300);
-            if (this.getAuthenticated === false){
-                this.orderData = {};
-                this.orderData.checkoutProduct = this.getCheckoutData
-            }else {
-                this.orderData = this.getAuthenticated;
-                this.orderData.checkoutProduct = this.getCheckoutData;
+
+                }
+            },
+            mounted() {
+                setTimeout(function () {
+                    // Get the head tag
+                    var head_ID = document.getElementsByTagName("head")[0];
+                    // Create script element
+                    var script_element = document.createElement('script');
+                    // Set the script type to JavaScript
+                    script_element.type = 'text/javascript';
+                    // External JS file
+                    script_element.src = 'js/custom.js';
+                    head_ID.appendChild(script_element);
+                }, 300);
+                if (this.getAuthenticated === false) {
+                    this.orderData = {};
+                    this.orderData.checkoutProduct = this.getCheckoutData
+                } else {
+                    this.orderData = this.getAuthenticated;
+                    this.orderData.checkoutProduct = this.getCheckoutData;
+                }
             }
         }
     }
