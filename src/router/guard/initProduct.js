@@ -10,7 +10,7 @@ export default (to, from, next) => {
                 id: 8,
                 name: "Bianca Potter",
                 price: "23000",
-                description: "Mathematics is the study of numbers, shapes and patterns. The word comes from the Greek word "μάθημα" (máthema), meaning "science, knowledge, or learning", and is sometimes shortened to maths (in England, Australia, Ireland, and New Zealand) or math (in the United States and Canada).",
+                description: "Mathematics is the study of numbers, shapes and patterns. The word comes from the Greek times shortened to maths (in England, Australia, Ireland, and New Zealand) or math (in the United States and Canada).",
                 image: "https://cdn.filestackcontent.com/AOnBzb92QyDUD52ieE9s",
                 created_at: "2020-03-12 23:09:29",
                 updated_at: "2020-03-22 10:18:08"
