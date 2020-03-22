@@ -190,28 +190,37 @@
                         // eslint-disable-next-line no-unused-vars
                     })
                 } else {
-                    // eslint-disable-next-line no-unused-vars
-                    await this.creatOrder(this.orderData).then(async (response) => {
-                        await this.$iziToast.success({
-                            title: 'Hey',
-                            message: "Order Placed Successfully",
-                            position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-                        });
-                        await this.$router.push({
-                            name: 'checkout-complete',
-                            params: {orderData: response},
-                            prop: {orderData: response}
-                        });
-
+                    if(this.getCheckoutData) {
                         // eslint-disable-next-line no-unused-vars
-                    }).catch(error => {
+                        await this.creatOrder(this.orderData).then(async (response) => {
+                            await this.$iziToast.success({
+                                title: 'Hey',
+                                message: "Order Placed Successfully",
+                                position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                            });
+                            await this.$router.push({
+                                name: 'checkout-complete',
+                                params: {orderData: response},
+                                prop: {orderData: response}
+                            });
+
+                            // eslint-disable-next-line no-unused-vars
+                        }).catch(error => {
+                            this.$iziToast.error({
+                                title: 'Hey',
+                                message: "Checkout unsuccessfull server error",
+                                position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+                                // eslint-disable-next-line no-unused-vars
+                            });
+                        });
+                    }else {
                         this.$iziToast.error({
                             title: 'Hey',
-                            message: "Checkout unsuccessfull server error",
+                            message: 'one product must at least be selected',
                             position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
                             // eslint-disable-next-line no-unused-vars
-                        });
-                    });
+                        })
+                    }
 
                 }
             },
@@ -231,7 +240,7 @@
                     this.orderData = {};
                     this.orderData.checkoutProduct = this.getCheckoutData
                 } else {
-                    this.orderData = this.getAuthenticated;
+                    // this.orderData = this.getAuthenticated;
                     this.orderData.checkoutProduct = this.getCheckoutData;
                 }
             },
