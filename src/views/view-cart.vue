@@ -83,7 +83,7 @@
                                     <h2>Grand Total <span class="text-primary">₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></h2>
                                 </div>
                                 <div class="cart-summary-button">
-                                    <a href="#" class="checkout-btn c-btn btn--primary">Checkout</a>
+                                    <router-link to="/checkout" class="checkout-btn c-btn btn--primary">Check Out</router-link>
                                 </div>
                             </div>
                         </div>

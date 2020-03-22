@@ -70,8 +70,8 @@
                                                             View Cart <i
                                                                 class="fas fa-chevron-right"></i>
                                                         </router-link>
-                                                        <a href="#" class="btn btn--primary">Check Out <i
-                                                                class="fas fa-chevron-right"></i></a>
+                                                        <router-link class="btn btn--primary" to="/checkout">Check Out <i
+                                                                class="fas fa-chevron-right"></i></router-link>
                                                     </div>
                                                 </div>
                                             </div>

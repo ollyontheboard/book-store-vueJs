@@ -43,9 +43,11 @@
                                 <li> <router-link to="/authenticated/dashboard">Transactions</router-link></li>
                             </ul>
                         </li>
-                        <li><a href="#"><i class="icons-left fas fa-phone"></i> Contact</a>
+                        <li>
+                            <router-link to="/contact"><i class="icons-left fas fa-phone"></i> Contact</router-link>
                         </li>
-                        <li><a href="#"><i class="icons-left fas fa-share"></i> Checkout</a>
+                        <li>
+                            <router-link to="/checkout"><i class="icons-left fas fa-share"></i> Checkout</router-link>
                         </li>
                     </ul>
                 </div>

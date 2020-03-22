@@ -48,6 +48,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/view-cart')
   },
   {
+    path: '/checkout/',
+    beforeEnter: mountAuth,
+    name: 'checkout',
+    component: () => import(/* webpackChunkName: "about" */ '../views/checkout')
+  },
+  {
     path: '/authenticated/dashboard',
     beforeEnter:IsLoggedIn,
     name: 'account-board',
