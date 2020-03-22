@@ -46,7 +46,7 @@
                                                     <div class="cart-product">
                                                         <router-link class="../assets/image"
                                                                      :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
-                                                            <img :src='url+item.image'
+                                                            <img :src='item.image'
                                                                  style="height: 50px; width: 50px;" alt="">
                                                         </router-link>
                                                         <div class="content">

@@ -28,7 +28,7 @@
               "asNavFor": ".product-slider-nav"
               }'>
                             <div class="single-slide">
-                                <img :src="url+product_details.image" alt="">
+                                <img :src="product_details.image" alt="">
                             </div>
                         </div>
                         <!-- Product Details Slider Nav -->

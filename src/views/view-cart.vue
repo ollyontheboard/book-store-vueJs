@@ -47,7 +47,7 @@
                                             <td class="pro-thumbnail">
                                                 <router-link class="../assets/image"
                                                                                          :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
-                                                <img :src='url+item.image'
+                                                <img :src='item.image'
                                                      style="height: 50px; width: 50px;" alt="product">
                                             </router-link></td>
                                             <td class="pro-title"><a href="#">{{item.name}}</a></td>

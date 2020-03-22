@@ -30,12 +30,12 @@
                             </div>
                             <div class="product-card--body">
                                 <div class="card-image">
-                                    <img :src='url+item.image' alt="">
+                                    <img :src='item.image' alt="">
                                     <div class="hover-contents">
                                         <router-link
                                                 :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }"
                                                 class="hover-image">
-                                            <img :src='url+item.image' alt="">
+                                            <img :src='item.image' alt="">
                                         </router-link>
                                         <div class="hover-btns">
                                             <a href="javascript:void(0);" @click="addItem(item)" class="single-btn">
