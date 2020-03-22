@@ -42,7 +42,7 @@
                                         <div class="row">
                                             <div class="col-12 col-12 mb--20">
                                                 <label>Full Name*</label>
-                                                <input type="text" disabled v-model="orderData.full_name" required
+                                                <input type="text" disabled v-model="getAuthenticated.full_name" required
                                                        placeholder="First Name">
                                             </div>
                                             <!--                                            <div class="col-12 mb&#45;&#45;20">-->
@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
                                                 <label>Email Address*</label>
-                                                <input type="email" disabled v-model="orderData.email" required
+                                                <input type="email" disabled v-model="getAuthenticated.email" required
                                                        placeholder="Email Address">
                                             </div>
                                             <div class="col-md-6 col-12 mb--20">
@@ -234,7 +234,7 @@
                     this.orderData = this.getAuthenticated;
                     this.orderData.checkoutProduct = this.getCheckoutData;
                 }
-            }
+            },
         }
     }
 </script>
