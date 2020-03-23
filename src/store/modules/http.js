@@ -14,7 +14,8 @@ export default {
         cartItems: [],
         checkoutData: [
             {data:false}
-        ]
+        ],
+        orders:{}
     },
     mutations: {
         "setUser"(state, user) {
@@ -22,6 +23,47 @@ export default {
             state.user = false;
             localStorage.setItem("authMetadata", JSON.stringify(user));
             state.user = user;
+        },
+        // eslint-disable-next-line no-unused-vars
+        "setOrders"(state, data) {
+            let orderData = {
+                orders: [],
+                order_details: []
+            };
+            let getData = JSON.parse(localStorage.getItem("orderData"));
+            if (getData === null) {
+                // eslint-disable-next-line no-unused-vars
+                Object.keys(data).forEach((key, index) => {
+                    console.log(key);
+                    if (key === 'orders') {
+                        orderData.orders.push(data[key][0])
+                    }
+                    if (key === 'order_details') {
+                        orderData.order_details.push(data[key][0])
+                    }
+                });
+                localStorage.setItem("orderData", JSON.stringify(orderData));
+            }else {
+                // eslint-disable-next-line no-unused-vars
+                Object.keys(data).forEach((key, index) => {
+                    if (key === 'orders') {
+                        orderData.orders.push(data[key][0])
+                    }
+                    if (key === 'order_details') {
+                        orderData.order_details.push(data[key][0])
+                    }
+                });
+                // eslint-disable-next-line no-unused-vars
+                Object.keys(getData).forEach((key, index) => {
+                    if (key === 'orders') {
+                        orderData.orders.push(data[key][0])
+                    }
+                    if (key === 'order_details') {
+                        orderData.order_details.push(data[key][0])
+                    }
+                });
+                localStorage.setItem("orderData", JSON.stringify(orderData));
+            }
         },
         // eslint-disable-next-line no-unused-vars
         "setUserAuth"(state, user) {
@@ -165,6 +207,7 @@ export default {
             try {
                 let response = await intergration_layer.checkOut(data);
                 commit("unsetCheckoutData");
+
                 return response
             } catch (error) {
                 throw new Error(error.response.data.error);
@@ -194,6 +237,9 @@ export default {
         },
         async mountCheckoutData({commit}, data) {
             commit('mountCheckoutData', data)
+        },
+        async mutateOrders({commit}, data) {
+            commit('setOrders', data.data)
         }
 
     },

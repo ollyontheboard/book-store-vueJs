@@ -30,10 +30,10 @@
                                     <a href="#payment-method" data-toggle="tab"><i class="fa fa-credit-card"></i>
                                         Payment
                                         Method</a>
-                                    <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>
-                                        address</a>
-                                    <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account
-                                        Details</a>
+<!--                                    <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>-->
+<!--                                        address</a>-->
+<!--                                    <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account-->
+<!--                                        Details</a>-->
                                     <a href="#" @click="logOutToken()"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                 </div>
                             </div>
@@ -74,29 +74,16 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Mostarizing Oil</td>
-                                                        <td>Aug 22, 2018</td>
-                                                        <td>Pending</td>
-                                                        <td>$45</td>
-                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Katopeno Altuni</td>
-                                                        <td>July 22, 2018</td>
-                                                        <td>Approved</td>
-                                                        <td>$100</td>
-                                                        <td><a href="cart.html" class="btn">View</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Murikhete Paris</td>
-                                                        <td>June 12, 2017</td>
-                                                        <td>On Hold</td>
-                                                        <td>$99</td>
-                                                        <td><a href="cart.html" class="btn">View</a></td>
+                                                    <tr v-for="(item, index) in orderData.orders" :key="index">
+                                                        <td>{{("" + Math.random()).substring(2, 8) }}</td>
+                                                        <td>{{item.name}}</td>
+                                                        <td>{{formatDate(item.created_at)}}</td>
+                                                        <td>Successful</td>
+                                                        <td>₦{{(item.price * item.qty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</td>
+                                                        <td><router-link
+                                                                :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
+                                                            View
+                                                        </router-link> </td>
                                                     </tr>
                                                     </tbody>
                                                 </table>
@@ -115,64 +102,23 @@
                                     </div>
                                     <!-- Single Tab Content End -->
                                     <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="address-edit" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Billing Address</h3>
-                                            <address>
-                                                <p><strong>Alex Tuntuni</strong></p>
-                                                <p>1355 Market St, Suite 900 <br>
-                                                    San Francisco, CA 94103</p>
-                                                <p>Mobile: (123) 456-7890</p>
-                                            </address>
-                                            <a href="#" class="btn btn--primary"><i class="fa fa-edit"></i>Edit
-                                                Address</a>
-                                        </div>
-                                    </div>
+<!--                                    <div class="tab-pane fade" id="address-edit" role="tabpanel">-->
+<!--                                        <div class="myaccount-content">-->
+<!--                                            <h3>Billing Address</h3>-->
+<!--                                            <address>-->
+<!--                                                <p><strong>Alex Tuntuni</strong></p>-->
+<!--                                                <p>1355 Market St, Suite 900 <br>-->
+<!--                                                    San Francisco, CA 94103</p>-->
+<!--                                                <p>Mobile: (123) 456-7890</p>-->
+<!--                                            </address>-->
+<!--                                            <a href="#" class="btn btn&#45;&#45;primary"><i class="fa fa-edit"></i>Edit-->
+<!--                                                Address</a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
                                     <!-- Single Tab Content End -->
                                     <!-- Single Tab Content Start -->
-                                    <div class="tab-pane fade" id="account-info" role="tabpanel">
-                                        <div class="myaccount-content">
-                                            <h3>Account Details</h3>
-                                            <div class="account-details-form">
-                                                <form action="#">
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-12  mb--30">
-                                                            <input id="first-name" placeholder="First Name" type="text">
-                                                        </div>
-                                                        <div class="col-lg-6 col-12  mb--30">
-                                                            <input id="last-name" placeholder="Last Name" type="text">
-                                                        </div>
-                                                        <div class="col-12  mb--30">
-                                                            <input id="display-name" placeholder="Display Name"
-                                                                   type="text">
-                                                        </div>
-                                                        <div class="col-12  mb--30">
-                                                            <input id="email" placeholder="Email Address" type="email">
-                                                        </div>
-                                                        <div class="col-12  mb--30">
-                                                            <h4>Password change</h4>
-                                                        </div>
-                                                        <div class="col-12  mb--30">
-                                                            <input id="current-pwd" placeholder="Current Password"
-                                                                   type="password">
-                                                        </div>
-                                                        <div class="col-lg-6 col-12  mb--30">
-                                                            <input id="new-pwd" placeholder="New Password"
-                                                                   type="password">
-                                                        </div>
-                                                        <div class="col-lg-6 col-12  mb--30">
-                                                            <input id="confirm-pwd" placeholder="Confirm Password"
-                                                                   type="password">
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <button class="btn btn--primary">Save Changes</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single Tab Content End -->
+
+
                                 </div>
                             </div>
                             <!-- My Account Tab Content End -->
@@ -189,12 +135,18 @@
 <script lang="js">
     import {mapActions, mapGetters} from "vuex";
     import store from "../../store/store";
+    import moment from "moment";
 
     const pageFooter = () => import('@/components/footer.vue');
     const topHeader = () => import('@/components/top-header.vue');
 
     export default {
         name: "account-board",
+        data() {
+            return {
+                orderData: JSON.parse(localStorage.getItem("orderData"))
+            }
+        },
         components: {pageFooter, topHeader},
         computed: {
             ...mapGetters({
@@ -207,6 +159,9 @@
                 // eslint-disable-next-line no-unused-vars
               await this.logOut();
                   await  this.$router.push('/');
+            },
+            formatDate (value){
+                return moment(String(value)).format('dddd, MMMM Do YYYY')
             }
         },
         created() {

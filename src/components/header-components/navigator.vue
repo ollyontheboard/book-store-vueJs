@@ -10,7 +10,7 @@
                             </div>
                             <div class="text">
                                 <p>Free Support 24/7</p>
-                                <p class="font-weight-bold number">+01-202-555-0181</p>
+                                <p class="font-weight-bold number">+234 9056999364</p>
                             </div>
                         </div>
                     </div>

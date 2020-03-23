@@ -4,23 +4,12 @@
             <div class="row">
                 <div class="col-lg-4">
                     <ul class="header-top-list">
-                        <li class="dropdown-trigger currency-dropdown"><a href="#">£ GBP </a><i
-                                class="fas fa-chevron-down dropdown-arrow"></i>
-                            <ul class="dropdown-box">
-                                <li><a href="#">€ Euro</a></li>
-                                <li><a href="#">£ Pound Sterling</a></li>
-                                <li><a href="#">$ US Dollar</a></li>
-                            </ul>
-                        </li>
                         <li class="dropdown-trigger language-dropdown"><a href="#"><span class="flag-img"><img
-                                src="../../assets/image/icon/eng-flag.png" alt=""></span>en-gb </a><i
+                                src="../../assets/image/icon/eng-flag.png" alt=""></span>en-ng </a><i
                                 class="fas fa-chevron-down dropdown-arrow"></i>
                             <ul class="dropdown-box">
                                 <li><a href="#"> <span class="flag-img"><img src="../../assets/image/icon/eng-flag.png"
                                                                              alt=""></span>English</a></li>
-                                <li><a href="#"> <span class="flag-img"><img
-                                        src="../../assets/image/icon/germany-flag.png"
-                                        alt=""></span>Germany</a></li>
                             </ul>
                         </li>
                     </ul>

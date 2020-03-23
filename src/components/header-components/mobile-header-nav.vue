@@ -6,7 +6,7 @@
                     <div class="row align-items-sm-end align-items-center">
                         <div class="col-md-4 col-7">
                             <router-link to="/">
-                                <img src="../../assets/image/logo.png" alt="">
+                                <h3>Accentuate</h3>
                             </router-link>
                         </div>
                         <div class="col-md-3 col-5  order-md-3 text-right">

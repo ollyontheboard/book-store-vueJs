@@ -10,7 +10,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-3">
                                 <router-link to="/">
-                                    <img src="../assets/image/logo.png" alt="">
+                                    <h3>Accentuate</h3>
                                 </router-link>
                             </div>
                             <div class="col-lg-5">

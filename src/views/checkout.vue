@@ -180,6 +180,7 @@
         },
         methods: {
             ...mapActions(['creatOrder']),
+            ...mapActions(['mutateOrders']),
             async placeOrder() {
                 if (this.getAuthenticated === false) {
                     this.$iziToast.error({
@@ -189,7 +190,7 @@
                         // eslint-disable-next-line no-unused-vars
                     })
                 } else {
-                    if(this.getCheckoutData[0].data !== false) {
+                    if(this.getCheckoutData.length > 0) {
                         this.orderData.checkoutProduct = this.getCheckoutData;
                         // eslint-disable-next-line no-unused-vars
                         await this.creatOrder(this.orderData).then(async (response) => {
@@ -198,6 +199,7 @@
                                 message: "Order Placed Successfully",
                                 position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
                             });
+                            this.mutateOrders(response);
                             await this.$router.push({
                                 name: 'checkout-complete',
                                 params: {orderData: response},
@@ -236,6 +238,7 @@
                     script_element.src = 'js/custom.js';
                     head_ID.appendChild(script_element);
                 }, 300);
+                localStorage.setItem("orderData", '[]');
                 if (this.getAuthenticated === false) {
                     this.orderData = {};
                     this.orderData.checkoutProduct = this.getCheckoutData

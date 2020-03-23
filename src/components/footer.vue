@@ -6,13 +6,14 @@
                     <div class=" col-xl-3 col-lg-4 col-sm-6">
                         <div class="single-footer pb--40">
                             <div class="brand-footer footer-title">
-                                <img src="../assets/image/logo--footer.png" alt="">
+                                <router-link to="/">
+                                    <h2>Accentuate</h2>
+                                </router-link>
                             </div>
                             <div class="footer-contact">
-                                <p><span class="label">Address:</span><span class="text">Example Street 98, HH2 BacHa, New
-                                    York, USA</span></p>
-                                <p><span class="label">Phone:</span><span class="text">+18088 234 5678</span></p>
-                                <p><span class="label">Email:</span><span class="text">suport@hastech.com</span></p>
+                                <p><span class="label">Address:</span><span class="text">Babcock university, Ilishan-Remo Ogun state</span></p>
+                                <p><span class="label">Phone:</span><span class="text">+234 9056999364</span></p>
+                                <p><span class="label">Email:</span><span class="text">olisahhopiah@gmail.com</span></p>
                             </div>
                         </div>
                     </div>
@@ -45,15 +46,6 @@
                         </div>
                     </div>
                     <div class=" col-xl-3 col-lg-4 col-sm-6">
-                        <div class="footer-title">
-                            <h3>Newsletter Subscribe</h3>
-                        </div>
-                        <div class="newsletter-form mb--30">
-                            <form action="https://demo.hasthemes.com/pustok-preview/pustok/php/mail.php">
-                                <input type="email" class="form-control" placeholder="Enter Your Email Address Here...">
-                                <button class="btn btn--primary w-100">Subscribe</button>
-                            </form>
-                        </div>
                         <div class="social-block">
                             <h3 class="title">STAY CONNECTED</h3>
                             <ul class="social-list list-inline">
