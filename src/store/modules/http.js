@@ -34,7 +34,6 @@ export default {
             if (getData === null) {
                 // eslint-disable-next-line no-unused-vars
                 Object.keys(data).forEach((key, index) => {
-                    console.log(key);
                     if (key === 'orders') {
                         orderData.orders.push(data[key][0])
                     }
