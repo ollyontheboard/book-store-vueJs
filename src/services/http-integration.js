@@ -47,7 +47,7 @@ export default {
     },
     checkOut(data) {
         return axios
-            .post(process.env.VUE_APP_APIURL + "api/v1/checkout/", data)
+            .post(process.env.VUE_APP_APIURL + "api/v1/checkout", data)
             .then(response => response.data)
             .catch(error => Promise.reject(error.response));
     },
