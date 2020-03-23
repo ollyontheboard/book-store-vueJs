@@ -1,7 +1,6 @@
 <template>
     <div class="checkout-view">
         <top-header></top-header>
-{{getCheckoutData}}
         <section class="breadcrumb-section">
             <h2 class="sr-only">Site Breadcrumb</h2>
             <div class="container">
