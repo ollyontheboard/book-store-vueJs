@@ -53,7 +53,9 @@ export default {
             state.checkoutData = JSON.parse(localStorage.getItem("checkoutData"));
         },
         "unsetCheckoutData"(state) {
-            state.checkoutData = [];
+            state.checkoutData = [
+                {data:false}
+            ];
             localStorage.removeItem("checkoutData")
         },
         "setAllProducts"(state, data) {
