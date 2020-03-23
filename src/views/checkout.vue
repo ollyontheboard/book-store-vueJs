@@ -1,7 +1,7 @@
 <template>
     <div class="checkout-view">
         <top-header></top-header>
-
+{{getCheckoutData}}
         <section class="breadcrumb-section">
             <h2 class="sr-only">Site Breadcrumb</h2>
             <div class="container">
@@ -190,7 +190,7 @@
                         // eslint-disable-next-line no-unused-vars
                     })
                 } else {
-                    if(this.getCheckoutData) {
+                    if(this.getCheckoutData[0].data !== false) {
                         this.orderData.checkoutProduct = this.getCheckoutData;
                         // eslint-disable-next-line no-unused-vars
                         await this.creatOrder(this.orderData).then(async (response) => {

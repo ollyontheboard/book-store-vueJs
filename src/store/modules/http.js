@@ -12,7 +12,9 @@ export default {
         products: false,
         product_details: false,
         cartItems: [],
-        checkoutData: []
+        checkoutData: [
+            {data:false}
+        ]
     },
     mutations: {
         "setUser"(state, user) {
