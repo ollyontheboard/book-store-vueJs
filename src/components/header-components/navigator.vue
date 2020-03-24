@@ -38,6 +38,9 @@
                                 <li class="menu-item">
                                     <router-link to="/contact">Contact</router-link>
                                 </li>
+                                <li class="menu-item" v-show="getAuthenticated === false">
+                                    <router-link to="/auth/login">Login</router-link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -48,8 +51,15 @@
 </template>
 
 <script>
+    import {mapGetters} from "vuex";
+
     export default {
-        name: "navigator"
+        name: "navigator",
+        computed: {
+            ...mapGetters({
+                getAuthenticated: "user"
+            })
+        }
     }
 </script>
 

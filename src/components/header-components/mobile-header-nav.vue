@@ -68,6 +68,9 @@
                                 <li class="menu-item">
                                     <router-link to="/contact">Contact</router-link>
                                 </li>
+                                <li class="menu-item" v-show="getAuthenticated === false">
+                                    <router-link to="/auth/login">Login</router-link>
+                                </li>
                             </ul>
                         </nav>
                         <!-- mobile menu navigation end -->
