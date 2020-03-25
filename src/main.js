@@ -18,7 +18,7 @@ Vue.prototype.$iziToast = iziToast;
 import "@/assets/css/plugins.css"
 import "@/assets/css/main.css"
 const getStorage = localStorage.getItem("orderData");
-if (getStorage !== null) {
+if (getStorage === null) {
   let orderData = {
     orders: [],
     order_details: []
