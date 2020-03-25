@@ -215,7 +215,7 @@ jQuery(document).ready(function($) {
             $('.slide-down--item').on('click', function(e) {
                 e.stopPropagation();
             })
-        };
+        }
 
         clickDom();
 
