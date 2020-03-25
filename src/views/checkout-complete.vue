@@ -115,6 +115,8 @@
             if (this.orderData === undefined){
                 this.$router.push('/checkout');
             }
+        },
+        mounted() {
             setTimeout(function () {
                 // Get the head tag
                 var head_ID = document.getElementsByTagName("head")[0];
@@ -126,7 +128,6 @@
                 script_element.src = 'js/custom.js';
                 head_ID.appendChild(script_element);
             }, 300);
-
         }
     }
 </script>
