@@ -7,40 +7,40 @@ export default (to, from, next) => {
     data: {
         products: [
             {
-                id: 1,
-                name: "LENOVO prenosnik Yoga 900 13ISK",
-                price: "2000",
-                description: "This is some text for the LENOVO prenosnik Yoga 900 13ISK",
-                image: "https://cdn.filestackcontent.com/LtU9lvKBRWips1C3Bmvu",
-                created_at: "2020-03-25 18:09:56",
-                updated_at: "2020-03-25 18:10:15"
-            },
-            {
-                id: 3,
-                name: "Ployster Beg",
-                price: "50",
-                description: "This is some text for the Ployster Beg",
-                image: "https://cdn.filestackcontent.com/36LWuHVHSAGgKKXpmN3j",
-                created_at: "2020-03-25 18:09:57",
-                updated_at: "2020-03-25 18:10:26"
-            },
-            {
-                id: 4,
-                name: "Samsung LED",
-                price: "3000",
-                description: "This is some text for the Samsung LED",
-                image: "https://cdn.filestackcontent.com/SGpOTHw7SEuQ2JLekrcb",
-                created_at: "2020-03-25 18:09:57",
-                updated_at: "2020-03-25 18:10:33"
-            },
-            {
                 id: 2,
-                name: "Macbook",
+                name: "Ruby on Rails",
                 price: "233",
                 description: "This is some text for the Macbook",
                 image: "https://cdn.filestackcontent.com/tTmVEI5NRuyn28k0hs5z",
                 created_at: "2020-03-25 18:09:57",
-                updated_at: "2020-03-25 18:11:13"
+                updated_at: "2020-03-25 18:16:53"
+            },
+            {
+                id: 4,
+                name: "Vue js",
+                price: "3000",
+                description: "This is some text for the Samsung LED",
+                image: "https://cdn.filestackcontent.com/SGpOTHw7SEuQ2JLekrcb",
+                created_at: "2020-03-25 18:09:57",
+                updated_at: "2020-03-25 18:17:01"
+            },
+            {
+                id: 1,
+                name: "Php and Laravel",
+                price: "2000",
+                description: "This is some text for the LENOVO prenosnik Yoga 900 13ISK",
+                image: "https://cdn.filestackcontent.com/LtU9lvKBRWips1C3Bmvu",
+                created_at: "2020-03-25 18:09:56",
+                updated_at: "2020-03-25 18:17:17"
+            },
+            {
+                id: 3,
+                name: "Java and Scala",
+                price: "50",
+                description: "This is some text for the Ployster Beg",
+                image: "https://cdn.filestackcontent.com/36LWuHVHSAGgKKXpmN3j",
+                created_at: "2020-03-25 18:09:57",
+                updated_at: "2020-03-25 18:20:20"
             }
         ]
   }
