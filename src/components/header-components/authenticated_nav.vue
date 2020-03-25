@@ -16,12 +16,6 @@
                 </div>
                 <div class="col-lg-8 flex-lg-right">
                     <ul class="header-top-list">
-                        <li><a href="#"><i class="icons-left fas fa-random"></i>My Compare</a>
-                        </li>
-                        <li class="dropdown-trigger language-dropdown"><a href="#"><i
-                                class="icons-left fas fa-heart"></i>
-                            wishlist (0)</a>
-                        </li>
                         <li class="dropdown-trigger language-dropdown"><a href="#"><i
                                 class="icons-left fas fa-user"></i>
                             My Account</a><i class="fas fa-chevron-down dropdown-arrow"></i>
