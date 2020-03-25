@@ -33,7 +33,7 @@
 <!--                                    <a href="#address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i>-->
 <!--                                        address</a>-->
 <!--                                    <a href="#account-info" data-toggle="tab"><i class="fa fa-user"></i> Account-->
-<!--                                        Details</a>-->
+<!--                           F             Details</a>-->
                                     <a href="#" @click="logOutToken()"><i class="fas fa-sign-out-alt"></i> Logout</a>
                                 </div>
                             </div>
@@ -171,8 +171,6 @@
                 store.dispatch('authInit', authMetadata)
                     .then();
             }
-        },
-        mounted() {
             setTimeout(function() {
                 // Get the head tag
                 var head_ID = document.getElementsByTagName("head")[0];
@@ -181,9 +179,12 @@
                 // Set the script type to JavaScript
                 script_element.type = 'text/javascript';
                 // External JS file
-                script_element.src = 'js/custom.js';
+                script_element.src = '../../js/custom.js';
                 head_ID.appendChild(script_element);
             }, 200);
+        },
+        mounted() {
+
         }
     }
 </script>

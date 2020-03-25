@@ -38,15 +38,12 @@
                             <p class="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
                             <h3 class="product-title">{{product_details.name}}</h3>
                             <ul class="list-unstyled">
-                                <li>Ex Tax: <span class="list-value"> £60.24</span></li>
                                 <li>Brands: <a href="#" class="list-value font-weight-bold"> Canon</a></li>
                                 <li>Product Code: <span class="list-value"> model1</span></li>
-                                <li>Reward Points: <span class="list-value"> 200</span></li>
                                 <li>Availability: <span class="list-value"> In Stock</span></li>
                             </ul>
                             <div class="price-block">
-                                <span class="price-new">£73.79</span>
-                                <del class="price-old">£91.86</del>
+                                <span class="price-new">₦{{(product_details.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span>
                             </div>
                             <div class="rating-widget">
                                 <div class="rating-block">

@@ -17,6 +17,11 @@ Vue.prototype.$iziToast = iziToast;
 
 import "@/assets/css/plugins.css"
 import "@/assets/css/main.css"
+let orderData = {
+  orders: [],
+  order_details: []
+};
+localStorage.setItem("orderData", JSON.stringify(orderData));
 
 Vue.config.productionTip = true;
 

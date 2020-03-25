@@ -96,10 +96,11 @@ jQuery(document).ready(function($) {
         (function() {
             $(".search-trigger").on('click', function() {
                 $(".search-wrapper").addClass('open');
-            })
+            });
+            // eslint-disable-next-line no-unused-vars
             $(".search-dismiss,body").on('click', function(e) {
                 $(".search-wrapper").removeClass('open')
-            })
+            });
             // $("body").on('click', function () {
             // 	$(".search-wrapper").removeClass('open')
             // })
@@ -111,7 +112,7 @@ jQuery(document).ready(function($) {
         $('.category-trigger').on('click', function(e) {
             $('.category-nav').toggleClass('show');
             e.stopPropagation();
-        })
+        });
 
         /*------------------------
         	--> Slick Carousel
@@ -203,7 +204,7 @@ jQuery(document).ready(function($) {
             $(this).siblings('.slide-down--item').toggleClass("show");
             var $selectClass = $(this).parents('.slide-wrapper').siblings().children('.slide-down--item');
             $(this).parents('.slide-wrapper').siblings().children('.slide-down--item').slideUp('400');
-        })
+        });
 
         /*-------------------------------------
         	--> Slideup While clicking On Dom
@@ -215,7 +216,7 @@ jQuery(document).ready(function($) {
             $('.slide-down--item').on('click', function(e) {
                 e.stopPropagation();
             })
-        };
+        }
 
         clickDom();
 
@@ -262,7 +263,7 @@ jQuery(document).ready(function($) {
 
 
         }
-        stickyHeader()
+        stickyHeader();
         /*-------------------------------------
         	--> Range Slider
         ---------------------------------------*/
