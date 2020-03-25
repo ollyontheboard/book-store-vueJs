@@ -43,7 +43,7 @@
                                 <li>Availability: <span class="list-value"> In Stock</span></li>
                             </ul>
                             <div class="price-block">
-                                <span class="price-new">{{product_details.price}}</span>
+                                <span class="price-new">₦{{product_details.price}}</span>
                             </div>
                             <div class="rating-widget">
                                 <div class="rating-block">
