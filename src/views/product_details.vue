@@ -43,7 +43,7 @@
                                 <li>Availability: <span class="list-value"> In Stock</span></li>
                             </ul>
                             <div class="price-block">
-                                <span class="price-new">₦{{(product_details.price).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span>
+                                <span class="price-new">{{product_details.price}}</span>
                             </div>
                             <div class="rating-widget">
                                 <div class="rating-block">
@@ -214,6 +214,8 @@
 
         },
         created() {
+            this.id = this.$route.params.id;
+            this.getallProduct(this.$route.params.id);
             setTimeout(function() {
                 // Get the head tag
                 var head_ID = document.getElementsByTagName("head")[0];
@@ -225,8 +227,6 @@
                 script_element.src = 'js/custom.js';
                 head_ID.appendChild(script_element);
             }, 300);
-            this.id = this.$route.params.id;
-            this.getallProduct(this.$route.params.id);
         },
     }
 </script>
