@@ -164,27 +164,17 @@
                 return moment(String(value)).format('dddd, MMMM Do YYYY')
             }
         },
-        created() {
+        beforeMount() {
             const accessToken = localStorage.getItem("accessToken");
             const authMetadata = localStorage.getItem("authMetadata");
             if (accessToken) {
                 store.dispatch('authInit', authMetadata)
                     .then();
             }
-            setTimeout(function() {
-                // Get the head tag
-                var head_ID = document.getElementsByTagName("head")[0];
-                // Create script element
-                var script_element = document.createElement('script');
-                // Set the script type to JavaScript
-                script_element.type = 'text/javascript';
-                // External JS file
-                script_element.src = '../../js/custom.js';
-                head_ID.appendChild(script_element);
-            }, 200);
         },
         mounted() {
-
+			// eslint-disable-next-line no-undef
+			$('head').append($('<script />').attr('src', 'js/custom.js'))
         }
     }
 </script>

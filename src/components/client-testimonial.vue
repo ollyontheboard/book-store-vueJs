@@ -80,22 +80,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="single-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../assets/image/others/client-5.png" alt="">
-                            </div>
-                            <div class="testimonial-body">
-                                <article>
-                                    <h2 class="sr-only">Testimonial Article</h2>
-                                    <p>Pell Photoshops version of Lorem Ipsum. Proin gravida nibh vel velit.Lorem ipsum
-                                        dolor sit amet, consectetur
-                                        adipiscing elit. In molestie augue magna. This is..</p>
-                                    <span class="d-block client-name">Rebecka Filson</span>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

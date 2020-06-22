@@ -56,15 +56,11 @@
             </div>
             <div class="footer-bottom">
                 <div class="container">
-                    <p class="copyright-heading">Suspendisse in auctor augue. Cras fermentum est ac fermentum tempor. Etiam
-                        vel magna volutpat, posuere eros</p>
-                    <a href="#" class="payment-block">
                         <img src="../assets/image/icon/payment.png" alt="">
-                    </a>
-                    <p class="copyright-text">Copyright © 2019 <a href="#" class="author">Pustok</a>. All Right Reserved.
+                    <p class="copyright-text">Copyright © 2019 <a href="#" class="author">Accentuate</a>. All Right Reserved.
                         <br>
-                        Design By Pustok</p>
-                </div>
+                        Design By Accentuate</p>
+            </div>
             </div>
         </footer>
     </div>
