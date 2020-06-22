@@ -17,14 +17,14 @@ Vue.prototype.$iziToast = iziToast;
 
 import "@/assets/css/plugins.css"
 import "@/assets/css/main.css"
-const getStorage = localStorage.getItem("orderData");
-if (getStorage === null) {
-  let orderData = {
-    orders: [],
-    order_details: []
-  };
-  localStorage.setItem("orderData", JSON.stringify(orderData));
-}
+// const getStorage = localStorage.getItem("orderData");
+// if (getStorage === null) {
+//   let orderData = {
+//     orders: [],
+//     order_details: []
+//   };
+//   localStorage.setItem("orderData", JSON.stringify(orderData));
+// }
 Vue.config.productionTip = true;
 
 new Vue({

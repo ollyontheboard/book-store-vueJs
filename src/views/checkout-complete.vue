@@ -7,7 +7,9 @@
                 <div class="breadcrumb-contents">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"> <router-link to="/">Home</router-link></li>
+                            <li class="breadcrumb-item">
+                                <router-link to="/">Home</router-link>
+                            </li>
                             <li class="breadcrumb-item active">Order Complete</li>
                         </ol>
                     </nav>
@@ -26,8 +28,10 @@
                         </div>
                         <ul class="order-details-list">
                             <li>Order Number: <strong>{{orderData.data.order_details[0].id}}</strong></li>
-                            <li>Date: <strong>{{this.formatDate(orderData.data.order_details[0].date.date)}}</strong></li>
-                            <li>Total: <strong>₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</strong></li>
+                            <li>Date: <strong>{{this.formatDate(orderData.data.order_details[0].date.date)}}</strong>
+                            </li>
+                            <li>Total: <strong>₦{{(Total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</strong>
+                            </li>
                             <li>Payment Method: <strong>Cash on Delivery</strong></li>
                         </ul>
                         <p>Pay with cash upon delivery.</p>
@@ -42,11 +46,14 @@
                                 </thead>
                                 <tbody>
                                 <tr v-for="item in orderData.data.orders" :key="item.id">
-                                    <td><router-link
-                                            :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
-                                        {{item.name}}
-                                    </router-link> <strong>× {{item.qty}}</strong></td>
-                                    <td><span>₦{{(item.price * item.qty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span></td>
+                                    <td>
+                                        <router-link
+                                                :to="{ name: 'product_details', params: { id: item.id }, prop:{id: item.id} }">
+                                            {{item.name}}
+                                        </router-link>
+                                        <strong>× {{item.qty}}</strong></td>
+                                    <td><span>₦{{(item.price * item.qty).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</span>
+                                    </td>
                                 </tr>
                                 </tbody>
                                 <tfoot>
@@ -83,8 +90,7 @@
     export default {
         name: "checkout-complete",
         data() {
-            return {
-            }
+            return {}
         },
         props: ['orderData'],
         components: {
@@ -107,12 +113,12 @@
         methods: {
             // ...mapActions(['creatOrder']),
             //
-            formatDate (value){
+            formatDate(value) {
                 return moment(String(value)).format('dddd, MMMM Do YYYY')
             }
         },
         created() {
-            if (this.orderData === undefined){
+            if (this.orderData === undefined) {
                 this.$router.push('/checkout');
             }
         },

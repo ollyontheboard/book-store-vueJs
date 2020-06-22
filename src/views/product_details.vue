@@ -213,20 +213,13 @@
             },
 
         },
-        created() {
-            this.id = this.$route.params.id;
-            this.getallProduct(this.$route.params.id);
-            setTimeout(function() {
-                // Get the head tag
-                var head_ID = document.getElementsByTagName("head")[0];
-                // Create script element
-                var script_element = document.createElement('script');
-                // Set the script type to JavaScript
-                script_element.type = 'text/javascript';
-                // External JS file
-                script_element.src = 'js/custom.js';
-                head_ID.appendChild(script_element);
-            }, 300);
+        beforeMount () {
+			this.id = this.$route.params.id;
+			this.getallProduct(this.$route.params.id);
+		},
+		mounted() {
+			// eslint-disable-next-line no-undef
+			$('head').append($('<script />').attr('src', 'js/custom.js'))
         },
     }
 </script>
