@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 // eslint-disable-next-line no-unused-vars
 import IsLoggedIn from "./guard/IsLoggedIn";
 import AuthInit from "./guard/Authinit";
-import InitProduct from "./guard/initProduct";
+// import InitProduct from "./guard/initProduct";
 import mountAuth from "./guard/mountAuth";
 import mountCheckoutData from "./guard/mountCheckout";
 
@@ -15,7 +15,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    beforeEnter: multiple([InitProduct, mountAuth] ),
+    beforeEnter: mountAuth,
     name: 'Home',
     component: () => import(/* webpackChunkName: "about" */ '../views/Layout.vue')
   },
