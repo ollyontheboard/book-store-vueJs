@@ -28,9 +28,6 @@
                         <div class="contact_adress">
                             <div class="ct_address">
                                 <h3 class="ct_title">Location & Details</h3>
-                                <p>It is a long established fact that readewill be distracted by the readable content of
-                                    a page when looking
-                                    at ilayout.</p>
                             </div>
                             <div class="address_wrapper">
                                 <div class="address">
@@ -38,7 +35,7 @@
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="contact-info-text">
-                                        <p><span>Address:</span> 1234 - Bandit Tringi lAliquam <br> Vitae. New York</p>
+                                        <p><span>Address:</span> Babcock university, Ilishan-Remo Ogun state</p>
                                     </div>
                                 </div>
                                 <div class="address">
@@ -46,7 +43,7 @@
                                         <i class="far fa-envelope"></i>
                                     </div>
                                     <div class="contact-info-text">
-                                        <p><span>Email: </span> support@example.com </p>
+                                        <p><span>Email: </span> olisahhopiah@gmail.com </p>
                                     </div>
                                 </div>
                                 <div class="address">
@@ -54,7 +51,7 @@
                                         <i class="fas fa-mobile-alt"></i>
                                     </div>
                                     <div class="contact-info-text">
-                                        <p><span>Phone:</span> (800) 0123 456 789 </p>
+                                        <p><span>Phone:</span> +2349056999364 </p>
                                     </div>
                                 </div>
                             </div>

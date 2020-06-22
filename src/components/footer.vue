@@ -12,7 +12,7 @@
                             </div>
                             <div class="footer-contact">
                                 <p><span class="label">Address:</span><span class="text">Babcock university, Ilishan-Remo Ogun state</span></p>
-                                <p><span class="label">Phone:</span><span class="text">+234 9056999364</span></p>
+                                <p><span class="label">Phone:</span><span class="text">+2349056999364</span></p>
                                 <p><span class="label">Email:</span><span class="text">olisahhopiah@gmail.com</span></p>
                             </div>
                         </div>

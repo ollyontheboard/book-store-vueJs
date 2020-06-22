@@ -24,57 +24,7 @@
                             <div class="testimonial-body">
                                 <article>
                                     <h2 class="sr-only">Testimonial Article</h2>
-                                    <p>version This is Photoshops of Lorem Ipsum. Proin gravida nibh vel velit.Lorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. In molestie augue magna. Pell..</p>
-                                    <span class="d-block client-name">Rebecka Filson</span>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../assets/image/others/client-2.png" alt="">
-                            </div>
-                            <div class="testimonial-body">
-                                <article>
-                                    <h2 class="sr-only">Testimonial Article</h2>
-                                    <p>In molestie augue magna.This is Photoshops version of Lorem Ipsum. Proin gravida
-                                        nibh vel velit.Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit. Pell..</p>
-                                    <span class="d-block client-name">Rebecka Filson</span>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../assets/image/others/client-3.png" alt="">
-                            </div>
-                            <div class="testimonial-body">
-                                <article>
-                                    <h2 class="sr-only">Testimonial Article</h2>
-                                    <p>Lorem Ipsum This is Photoshops version of . Proin gravida nibh vel velit.Lorem
-                                        ipsum dolor sit amet, consectetur
-                                        adipiscing elit. In molestie augue magna. Pell..</p>
-                                    <span class="d-block client-name">Rebecka Filson</span>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-image">
-                                <img src="../assets/image/others/client-4.png" alt="">
-                            </div>
-                            <div class="testimonial-body">
-                                <article>
-                                    <h2 class="sr-only">Testimonial Article</h2>
-                                    <p>elit. In molestie This is Photoshops version of Lorem Ipsum. Proin gravida nibh
-                                        vel velit.Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing augue magna. Pell..</p>
+                                    <p>Wow I love this site, so friendly and easy to use interface, Nice Job guys</p>
                                     <span class="d-block client-name">Rebecka Filson</span>
                                 </article>
                             </div>
