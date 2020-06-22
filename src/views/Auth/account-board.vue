@@ -156,10 +156,10 @@
         methods:{
             ...mapActions(['logOut']),
            async logOutToken(){
-                // eslint-disable-next-line no-unused-vars
               await this.logOut();
-                  await  this.$router.push('/');
-            },
+              return window.location.replace('/');
+               // eslint-disable-next-line no-mixed-spaces-and-tabs
+		   },
             formatDate (value){
                 return moment(String(value)).format('dddd, MMMM Do YYYY')
             }
