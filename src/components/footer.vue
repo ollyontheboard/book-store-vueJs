@@ -23,9 +23,6 @@
                                 <h3>Information</h3>
                             </div>
                             <ul class="footer-list normal-list">
-                                <li><a href="#">Prices drop</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Best sales</a></li>
                                 <li><a href="#">Contact us</a></li>
                                 <li><a href="#">Sitemap</a></li>
                             </ul>
@@ -37,9 +34,6 @@
                                 <h3>Extras</h3>
                             </div>
                             <ul class="footer-list normal-list">
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Stores</a></li>
                                 <li><a href="#">Contact us</a></li>
                                 <li><a href="#">Sitemap</a></li>
                             </ul>

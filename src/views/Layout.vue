@@ -11,7 +11,6 @@
                 <promotion-section></promotion-section>
 
             <client-testimonial></client-testimonial>
-            <brand-slider></brand-slider>
 
 
 
@@ -36,7 +35,6 @@ const thirdSection = () => import('@/components/third-section.vue');
 const featureSection = () => import('@/components/features-section.vue');
 const promotionSection = () => import('@/components/promotion-section.vue');
 const clientTestimonial = () => import('@/components/client-testimonial');
-const brandSlider = () => import('@/components/brand-slider');
 
 export default {
   name: 'Home',
@@ -49,8 +47,7 @@ export default {
       thirdSection,
       featureSection,
       promotionSection,
-      clientTestimonial,
-      brandSlider
+      clientTestimonial
   },
     methods:{
         ...mapActions(['getallProducts']),
